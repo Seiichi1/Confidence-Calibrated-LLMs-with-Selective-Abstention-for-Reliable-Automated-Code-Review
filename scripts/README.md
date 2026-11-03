@@ -33,6 +33,7 @@ exact implementation associated with each report.
 | Unseen-project paired uncertainty statistics | `run_unseen_policy_comparison_statistics.py` | `unseen_project_policy_results_report.md` |
 | Phoenix paired-reference evaluation | Released Phoenix `scripts/evaluate.py` used outside the project directory | `sota_reference_and_matched_baseline_report.md` |
 | Matched larger open-source baseline | `primevul_qwen14b_locked_test_colab.ipynb`, `evaluate_qwen_matched_baseline.py` | `sota_reference_and_matched_baseline_report.md` |
+| T4-compatible quantized 14B baseline | `run_qwen_colab.py --quantization 4bit` | `sota_reference_and_matched_baseline_report.md` |
 
 ## Reproducibility note
 
