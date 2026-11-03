@@ -31,6 +31,8 @@ exact implementation associated with each report.
 | Unseen-project Qwen inference | `primevul_qwen_unseen_project_colab.ipynb` | `unseen_project_holdout_protocol.md` |
 | Unseen-project Semgrep corroboration | `primevul_semgrep_unseen_project_colab.ipynb` | `unseen_project_holdout_protocol.md` |
 | Unseen-project paired uncertainty statistics | `run_unseen_policy_comparison_statistics.py` | `unseen_project_policy_results_report.md` |
+| Phoenix paired-reference evaluation | Released Phoenix `scripts/evaluate.py` used outside the project directory | `sota_reference_and_matched_baseline_report.md` |
+| Matched larger open-source baseline | `primevul_qwen14b_locked_test_colab.ipynb`, `evaluate_qwen_matched_baseline.py` | `sota_reference_and_matched_baseline_report.md` |
 
 ## Reproducibility note
 
