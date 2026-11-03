@@ -12,7 +12,7 @@
     {"file": "build_high_priority_group_manifest.py", "sha256": "9805DE88A143E67C029605D6F82500B87EDCC8563A65671752D83343CDA8A4E6", "stage": "group manifest"},
     {"file": "build_leakage_controlled_manifest.py", "sha256": "E5F1F9084D5D0F47DAEEE66DAA8D357D1F2A89CA82E81B47E38ADE742FDE6AF4", "stage": "leakage-controlled manifest"},
     {"file": "run_qwen_sample.py", "sha256": "6ACEEB218567987C1EA3A58214BDCD8C5B465E76BCFA05010EEDC7EE145ECED3", "stage": "Qwen smoke test"},
-    {"file": "run_qwen_colab.py", "sha256": "D8D692B544E55752D3ECC584D246CAF3F4BB590BB9B440573931452363F007B3", "stage": "Qwen Colab/full inference"},
+    {"file": "run_qwen_colab.py", "sha256": "F3CE03956B9010BCF980BC1BF9710F8DE123F2AA7DEBA1C3253DAA2332D6C86C", "stage": "Qwen Colab/full inference and optional 4-bit quantization"},
     {"file": "primevul_qwen_colab.ipynb", "sha256": "9C73D6B71B454312DC342B622BB68584A256A81D212F987D803DED7915BC3A65", "stage": "Qwen Colab notebook"},
     {"file": "primevul_qwen_test_colab.ipynb", "sha256": "89D921805E1B07EF45C2F9927D92CDA5A3388A125ED9D2EA20F41F9A9417031E", "stage": "locked PrimeVul test Colab notebook"},
     {"file": "fit_qwen_calibration.py", "sha256": "1AE6F26FEA2098EEB051433080FE462CD156F6467A3D3F536D1E8BBA56691720", "stage": "post-hoc calibration"},
@@ -31,7 +31,7 @@
     ,{"file": "primevul_semgrep_unseen_project_colab.ipynb", "sha256": "7002DEBB52541C93D6E1CB33BCAE6DFD44FB2EC60C7244AAEECA9EC188DA003E", "stage": "unseen project-held-out Semgrep corroboration"}
     ,{"file": "run_unseen_policy_comparison_statistics.py", "sha256": "8306FE101CFF5306B2485FC1D2D8A51FFE501F37325243DE95DA5AA49E9F487F", "stage": "unseen project-held-out paired uncertainty statistics"}
     ,{"file": "evaluate_qwen_matched_baseline.py", "sha256": "6185EAFCDC1FC8A4F39DDA9B28C41D02278A9C7928CACDD24C8B4F358CEDDA0C", "stage": "matched larger open-source baseline evaluation"}
-    ,{"file": "primevul_qwen14b_locked_test_colab.ipynb", "sha256": "CD81BD63FEDA62477122DC113EB8AC5F1F0A352ED4FA48EE0777DBF9A62F32CA", "stage": "matched Qwen2.5-Coder-14B locked-test Colab run"}
+    ,{"file": "primevul_qwen14b_locked_test_colab.ipynb", "sha256": "F656B98746A69B0ACD17DA3E7CF0F263C4C494622C3D3155F1E606D1F4D3FD2B", "stage": "matched Qwen2.5-Coder-14B locked-test Colab run"}
   ]
 }
 
