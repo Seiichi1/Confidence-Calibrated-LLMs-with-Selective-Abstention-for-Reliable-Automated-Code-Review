@@ -107,6 +107,7 @@ use:
 - maximum 16 generated tokens;
 - Hugging Face revision `aedcc2d42b622764e023cf882b6652e646b95671`;
 - NF4 4-bit quantization with double quantization and float16 computation;
+- maximum input length of 1,024 tokens for the T4-compatible run;
 - no calibration fitting, threshold selection, or policy changes using test labels;
 - the same explicit treatment of unparseable responses as unresolved;
 - ordinary YES precision, recall, F1, and accuracy as a model baseline.
@@ -121,6 +122,12 @@ The quantized run must be labeled separately from an FP16 run. If this model is
 later used as the proposed calibrated pipeline, calibration and policy
 selection must be refit using the quantized validation predictions before any
 test evaluation.
+
+The 1,024-token cap is an implementation constraint selected after the T4
+failed during generation on a longer function, even though the 4-bit weights
+loaded successfully. It reduces activation/logit memory and is recorded in
+the output metadata. Any function reaching the cap is marked as truncated; the
+result must therefore be interpreted as a resource-constrained baseline.
 
 ## 6. Run instructions
 
