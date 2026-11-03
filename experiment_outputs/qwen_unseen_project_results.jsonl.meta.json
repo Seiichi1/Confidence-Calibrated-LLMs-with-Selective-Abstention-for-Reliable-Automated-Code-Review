@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "model": {
+    "source": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "revision": "2e1fd39",
+    "dtype": "torch.float16",
+    "device": "cuda:0"
+  },
+  "run": {
+    "partition": "unseen_project_holdout",
+    "records_processed": 38362,
+    "records_processed_this_run": 38362,
+    "retained_manifest_records": 38362,
+    "sample_count": 0,
+    "seed": 12345,
+    "max_new_tokens": 16,
+    "max_input_tokens": 4096,
+    "oom_retry_input_tokens": 2048,
+    "resume_full_run": true,
+    "prompt_contract": "code-only YES/NO classification",
+    "data": "/content/drive/MyDrive/primevul_train/primevul_train.jsonl",
+    "manifest": "/content/drive/MyDrive/primevul_train/primevul_unseen_project_holdout_manifest.json",
+    "elapsed_seconds": 8243.905,
+    "output_format": "jsonl"
+  }
+}
+

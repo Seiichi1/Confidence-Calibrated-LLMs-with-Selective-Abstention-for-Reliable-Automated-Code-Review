@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+  <title>Confidence-calibrated selective code-review pipeline</title>
+  <desc>Code is reviewed by Qwen, calibrated, passed through a conformal gate, corroborated by Semgrep, and accepted or abstained.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#24415f"/></marker></defs>
+  <rect width="1200" height="420" fill="#ffffff"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle">
+    <rect x="35" y="150" width="155" height="72" rx="12" fill="#e9f2fb" stroke="#2d628f" stroke-width="2"/>
+    <text x="112" y="180" fill="#17324d"><tspan x="112">Source</tspan><tspan x="112" dy="24">function</tspan></text>
+    <rect x="230" y="150" width="175" height="72" rx="12" fill="#e9f2fb" stroke="#2d628f" stroke-width="2"/>
+    <text x="317" y="180" fill="#17324d"><tspan x="317">Qwen review</tspan><tspan x="317" dy="24">YES/NO + score</tspan></text>
+    <rect x="445" y="150" width="175" height="72" rx="12" fill="#eaf7f3" stroke="#23806d" stroke-width="2"/>
+    <text x="532" y="180" fill="#174d42"><tspan x="532">Post-hoc</tspan><tspan x="532" dy="24">calibration</tspan></text>
+    <rect x="660" y="140" width="170" height="92" rx="12" fill="#fff3df" stroke="#b66b18" stroke-width="2"/>
+    <text x="745" y="174" fill="#6f4210"><tspan x="745">Conformal</tspan><tspan x="745" dy="24">selective gate</tspan><tspan x="745" dy="24">accept or abstain</tspan></text>
+    <rect x="870" y="70" width="170" height="72" rx="12" fill="#f4ebfa" stroke="#8154a4" stroke-width="2"/>
+    <text x="955" y="100" fill="#4e2f68"><tspan x="955">Semgrep</tspan><tspan x="955" dy="24">rule evidence</tspan></text>
+    <rect x="870" y="250" width="170" height="72" rx="12" fill="#fbecec" stroke="#aa4141" stroke-width="2"/>
+    <text x="955" y="280" fill="#6b2525"><tspan x="955">Human</tspan><tspan x="955" dy="24">review queue</tspan></text>
+    <rect x="1080" y="150" width="85" height="72" rx="12" fill="#eaf7f3" stroke="#23806d" stroke-width="2"/>
+    <text x="1122" y="180" fill="#174d42"><tspan x="1122">Accepted</tspan><tspan x="1122" dy="24">alert</tspan></text>
+  </g>
+  <g stroke="#24415f" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M190 186 H230"/><path d="M405 186 H445"/><path d="M620 186 H660"/><path d="M830 170 H1080"/>
+    <path d="M745 140 V106 H870"/><path d="M745 232 V286 H870"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#425466">
+    <text x="850" y="98">supporting finding</text><text x="782" y="278">uncertain / no agreement</text>
+  </g>
+</svg>
+

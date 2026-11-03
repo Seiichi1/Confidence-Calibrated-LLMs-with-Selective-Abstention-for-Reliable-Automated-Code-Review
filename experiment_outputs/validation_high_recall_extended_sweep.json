@@ -1,0 +1,787 @@
+{
+  "status": "complete",
+  "method": {
+    "validation_only": true,
+    "calibrator": "temperature scaling",
+    "static_gate": "Semgrep corroborated-positive for the corroborated candidate",
+    "false_negative_cost": 20,
+    "false_positive_cost": 1,
+    "review_cost": 0.5,
+    "positive_recall_floors": [
+      0.2,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "test_labels_used": false
+  },
+  "candidates": [
+    {
+      "alpha": 0.01,
+      "policy": "conformal_singleton",
+      "summary": {
+        "records": 4571,
+        "accepted": 46,
+        "abstained": 4525,
+        "coverage": 0.010063443447823233,
+        "abstention_rate": 0.9899365565521767,
+        "true_positive": 2,
+        "true_negative": 0,
+        "false_positive": 44,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.043478260869565216,
+        "positive_recall": 0.01904761904761905,
+        "normalized_cost_fn20_fp1_review05": 0.5045941807044411
+      }
+    },
+    {
+      "alpha": 0.01,
+      "policy": "corroborated_positive",
+      "summary": {
+        "records": 4571,
+        "accepted": 5,
+        "abstained": 4566,
+        "coverage": 0.0010938525486764385,
+        "abstention_rate": 0.9989061474513236,
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 5,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.0,
+        "positive_recall": 0.0,
+        "normalized_cost_fn20_fp1_review05": 0.5005469262743382
+      }
+    },
+    {
+      "alpha": 0.05,
+      "policy": "conformal_singleton",
+      "summary": {
+        "records": 4571,
+        "accepted": 223,
+        "abstained": 4348,
+        "coverage": 0.048785823670969154,
+        "abstention_rate": 0.9512141763290308,
+        "true_positive": 15,
+        "true_negative": 0,
+        "false_positive": 208,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.06726457399103139,
+        "positive_recall": 0.14285714285714285,
+        "normalized_cost_fn20_fp1_review05": 0.5211113541894553
+      }
+    },
+    {
+      "alpha": 0.05,
+      "policy": "corroborated_positive",
+      "summary": {
+        "records": 4571,
+        "accepted": 52,
+        "abstained": 4519,
+        "coverage": 0.011376066506234959,
+        "abstention_rate": 0.9886239334937651,
+        "true_positive": 8,
+        "true_negative": 0,
+        "false_positive": 44,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.15384615384615385,
+        "positive_recall": 0.0761904761904762,
+        "normalized_cost_fn20_fp1_review05": 0.5039378691752352
+      }
+    },
+    {
+      "alpha": 0.1,
+      "policy": "conformal_singleton",
+      "summary": {
+        "records": 4571,
+        "accepted": 483,
+        "abstained": 4088,
+        "coverage": 0.10566615620214395,
+        "abstention_rate": 0.8943338437978561,
+        "true_positive": 29,
+        "true_negative": 0,
+        "false_positive": 454,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.060041407867494824,
+        "positive_recall": 0.2761904761904762,
+        "normalized_cost_fn20_fp1_review05": 0.5464887333187486
+      }
+    },
+    {
+      "alpha": 0.1,
+      "policy": "corroborated_positive",
+      "summary": {
+        "records": 4571,
+        "accepted": 104,
+        "abstained": 4467,
+        "coverage": 0.022752133012469918,
+        "abstention_rate": 0.9772478669875301,
+        "true_positive": 14,
+        "true_negative": 0,
+        "false_positive": 90,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.1346153846153846,
+        "positive_recall": 0.13333333333333333,
+        "normalized_cost_fn20_fp1_review05": 0.508313279369941
+      }
+    },
+    {
+      "alpha": 0.2,
+      "policy": "conformal_singleton",
+      "summary": {
+        "records": 4571,
+        "accepted": 943,
+        "abstained": 3628,
+        "coverage": 0.2063005906803763,
+        "abstention_rate": 0.7936994093196237,
+        "true_positive": 38,
+        "true_negative": 0,
+        "false_positive": 905,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.04029692470837752,
+        "positive_recall": 0.3619047619047619,
+        "normalized_cost_fn20_fp1_review05": 0.5948370159702472
+      }
+    },
+    {
+      "alpha": 0.2,
+      "policy": "corroborated_positive",
+      "summary": {
+        "records": 4571,
+        "accepted": 169,
+        "abstained": 4402,
+        "coverage": 0.036972216145263616,
+        "abstention_rate": 0.9630277838547364,
+        "true_positive": 17,
+        "true_negative": 0,
+        "false_positive": 152,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.10059171597633136,
+        "positive_recall": 0.1619047619047619,
+        "normalized_cost_fn20_fp1_review05": 0.5147670094071319
+      }
+    },
+    {
+      "alpha": 0.3,
+      "policy": "conformal_singleton",
+      "summary": {
+        "records": 4571,
+        "accepted": 1440,
+        "abstained": 3131,
+        "coverage": 0.3150295340188143,
+        "abstention_rate": 0.6849704659811857,
+        "true_positive": 55,
+        "true_negative": 0,
+        "false_positive": 1385,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.03819444444444445,
+        "positive_recall": 0.5238095238095238,
+        "normalized_cost_fn20_fp1_review05": 0.6454823889739663
+      }
+    },
+    {
+      "alpha": 0.3,
+      "policy": "corroborated_positive",
+      "summary": {
+        "records": 4571,
+        "accepted": 233,
+        "abstained": 4338,
+        "coverage": 0.05097352876832203,
+        "abstention_rate": 0.9490264712316779,
+        "true_positive": 20,
+        "true_negative": 0,
+        "false_positive": 213,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.08583690987124463,
+        "positive_recall": 0.19047619047619047,
+        "normalized_cost_fn20_fp1_review05": 0.5211113541894553
+      }
+    },
+    {
+      "alpha": 0.4,
+      "policy": "conformal_singleton",
+      "summary": {
+        "records": 4571,
+        "accepted": 1906,
+        "abstained": 2665,
+        "coverage": 0.4169765915554583,
+        "abstention_rate": 0.5830234084445417,
+        "true_positive": 71,
+        "true_negative": 0,
+        "false_positive": 1835,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.037250786988457504,
+        "positive_recall": 0.6761904761904762,
+        "normalized_cost_fn20_fp1_review05": 0.6929555895865237
+      }
+    },
+    {
+      "alpha": 0.4,
+      "policy": "corroborated_positive",
+      "summary": {
+        "records": 4571,
+        "accepted": 284,
+        "abstained": 4287,
+        "coverage": 0.0621308247648217,
+        "abstention_rate": 0.9378691752351783,
+        "true_positive": 20,
+        "true_negative": 0,
+        "false_positive": 264,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.07042253521126761,
+        "positive_recall": 0.19047619047619047,
+        "normalized_cost_fn20_fp1_review05": 0.5266900021877051
+      }
+    },
+    {
+      "alpha": 0.5,
+      "policy": "conformal_singleton",
+      "summary": {
+        "records": 4571,
+        "accepted": 2342,
+        "abstained": 2229,
+        "coverage": 0.5123605338000438,
+        "abstention_rate": 0.48763946619995624,
+        "true_positive": 79,
+        "true_negative": 0,
+        "false_positive": 2263,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.033731853116994025,
+        "positive_recall": 0.7523809523809524,
+        "normalized_cost_fn20_fp1_review05": 0.7388973966309341
+      }
+    },
+    {
+      "alpha": 0.5,
+      "policy": "corroborated_positive",
+      "summary": {
+        "records": 4571,
+        "accepted": 310,
+        "abstained": 4261,
+        "coverage": 0.06781885801793919,
+        "abstention_rate": 0.9321811419820608,
+        "true_positive": 21,
+        "true_negative": 0,
+        "false_positive": 289,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.06774193548387097,
+        "positive_recall": 0.2,
+        "normalized_cost_fn20_fp1_review05": 0.5293152483045286
+      }
+    },
+    {
+      "alpha": 0.6,
+      "policy": "conformal_singleton",
+      "summary": {
+        "records": 4571,
+        "accepted": 2781,
+        "abstained": 1790,
+        "coverage": 0.6084007875738351,
+        "abstention_rate": 0.3915992124261649,
+        "true_positive": 88,
+        "true_negative": 0,
+        "false_positive": 2693,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.03164329377921611,
+        "positive_recall": 0.8380952380952381,
+        "normalized_cost_fn20_fp1_review05": 0.7849485889302122
+      }
+    },
+    {
+      "alpha": 0.6,
+      "policy": "corroborated_positive",
+      "summary": {
+        "records": 4571,
+        "accepted": 328,
+        "abstained": 4243,
+        "coverage": 0.07175672719317436,
+        "abstention_rate": 0.9282432728068256,
+        "true_positive": 22,
+        "true_negative": 0,
+        "false_positive": 306,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.06707317073170732,
+        "positive_recall": 0.20952380952380953,
+        "normalized_cost_fn20_fp1_review05": 0.5310654123824109
+      }
+    },
+    {
+      "alpha": 0.7,
+      "policy": "conformal_singleton",
+      "summary": {
+        "records": 4571,
+        "accepted": 3271,
+        "abstained": 1300,
+        "coverage": 0.715598337344126,
+        "abstention_rate": 0.28440166265587397,
+        "true_positive": 94,
+        "true_negative": 0,
+        "false_positive": 3177,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.028737389177621524,
+        "positive_recall": 0.8952380952380953,
+        "normalized_cost_fn20_fp1_review05": 0.8372347407569459
+      }
+    },
+    {
+      "alpha": 0.7,
+      "policy": "corroborated_positive",
+      "summary": {
+        "records": 4571,
+        "accepted": 351,
+        "abstained": 4220,
+        "coverage": 0.07678844891708597,
+        "abstention_rate": 0.923211551082914,
+        "true_positive": 22,
+        "true_negative": 0,
+        "false_positive": 329,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.06267806267806268,
+        "positive_recall": 0.20952380952380953,
+        "normalized_cost_fn20_fp1_review05": 0.5335812732443667
+      }
+    },
+    {
+      "alpha": 0.8,
+      "policy": "conformal_singleton",
+      "summary": {
+        "records": 4571,
+        "accepted": 3759,
+        "abstained": 812,
+        "coverage": 0.8223583460949464,
+        "abstention_rate": 0.1776416539050536,
+        "true_positive": 102,
+        "true_negative": 0,
+        "false_positive": 3657,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.02713487629688747,
+        "positive_recall": 0.9714285714285714,
+        "normalized_cost_fn20_fp1_review05": 0.8888645810544739
+      }
+    },
+    {
+      "alpha": 0.8,
+      "policy": "corroborated_positive",
+      "summary": {
+        "records": 4571,
+        "accepted": 364,
+        "abstained": 4207,
+        "coverage": 0.07963246554364471,
+        "abstention_rate": 0.9203675344563553,
+        "true_positive": 22,
+        "true_negative": 0,
+        "false_positive": 342,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.06043956043956044,
+        "positive_recall": 0.20952380952380953,
+        "normalized_cost_fn20_fp1_review05": 0.535003281557646
+      }
+    },
+    {
+      "alpha": 0.9,
+      "policy": "conformal_singleton",
+      "summary": {
+        "records": 4571,
+        "accepted": 4244,
+        "abstained": 327,
+        "coverage": 0.9284620433165609,
+        "abstention_rate": 0.0715379566834391,
+        "true_positive": 105,
+        "true_negative": 0,
+        "false_positive": 4139,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.02474081055607917,
+        "positive_recall": 1.0,
+        "normalized_cost_fn20_fp1_review05": 0.9412601181360752
+      }
+    },
+    {
+      "alpha": 0.9,
+      "policy": "corroborated_positive",
+      "summary": {
+        "records": 4571,
+        "accepted": 368,
+        "abstained": 4203,
+        "coverage": 0.08050754758258587,
+        "abstention_rate": 0.9194924524174142,
+        "true_positive": 22,
+        "true_negative": 0,
+        "false_positive": 346,
+        "false_negative": 0,
+        "accepted_positive_precision": 0.059782608695652176,
+        "positive_recall": 0.20952380952380953,
+        "normalized_cost_fn20_fp1_review05": 0.5354408225771166
+      }
+    }
+  ],
+  "selected_by_recall_floor": {
+    "0.2": [
+      {
+        "alpha": 0.5,
+        "policy": "corroborated_positive",
+        "summary": {
+          "records": 4571,
+          "accepted": 310,
+          "abstained": 4261,
+          "coverage": 0.06781885801793919,
+          "abstention_rate": 0.9321811419820608,
+          "true_positive": 21,
+          "true_negative": 0,
+          "false_positive": 289,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.06774193548387097,
+          "positive_recall": 0.2,
+          "normalized_cost_fn20_fp1_review05": 0.5293152483045286
+        }
+      },
+      {
+        "alpha": 0.6,
+        "policy": "corroborated_positive",
+        "summary": {
+          "records": 4571,
+          "accepted": 328,
+          "abstained": 4243,
+          "coverage": 0.07175672719317436,
+          "abstention_rate": 0.9282432728068256,
+          "true_positive": 22,
+          "true_negative": 0,
+          "false_positive": 306,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.06707317073170732,
+          "positive_recall": 0.20952380952380953,
+          "normalized_cost_fn20_fp1_review05": 0.5310654123824109
+        }
+      },
+      {
+        "alpha": 0.7,
+        "policy": "corroborated_positive",
+        "summary": {
+          "records": 4571,
+          "accepted": 351,
+          "abstained": 4220,
+          "coverage": 0.07678844891708597,
+          "abstention_rate": 0.923211551082914,
+          "true_positive": 22,
+          "true_negative": 0,
+          "false_positive": 329,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.06267806267806268,
+          "positive_recall": 0.20952380952380953,
+          "normalized_cost_fn20_fp1_review05": 0.5335812732443667
+        }
+      },
+      {
+        "alpha": 0.8,
+        "policy": "corroborated_positive",
+        "summary": {
+          "records": 4571,
+          "accepted": 364,
+          "abstained": 4207,
+          "coverage": 0.07963246554364471,
+          "abstention_rate": 0.9203675344563553,
+          "true_positive": 22,
+          "true_negative": 0,
+          "false_positive": 342,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.06043956043956044,
+          "positive_recall": 0.20952380952380953,
+          "normalized_cost_fn20_fp1_review05": 0.535003281557646
+        }
+      },
+      {
+        "alpha": 0.9,
+        "policy": "corroborated_positive",
+        "summary": {
+          "records": 4571,
+          "accepted": 368,
+          "abstained": 4203,
+          "coverage": 0.08050754758258587,
+          "abstention_rate": 0.9194924524174142,
+          "true_positive": 22,
+          "true_negative": 0,
+          "false_positive": 346,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.059782608695652176,
+          "positive_recall": 0.20952380952380953,
+          "normalized_cost_fn20_fp1_review05": 0.5354408225771166
+        }
+      }
+    ],
+    "0.3": [
+      {
+        "alpha": 0.2,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 943,
+          "abstained": 3628,
+          "coverage": 0.2063005906803763,
+          "abstention_rate": 0.7936994093196237,
+          "true_positive": 38,
+          "true_negative": 0,
+          "false_positive": 905,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.04029692470837752,
+          "positive_recall": 0.3619047619047619,
+          "normalized_cost_fn20_fp1_review05": 0.5948370159702472
+        }
+      },
+      {
+        "alpha": 0.3,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 1440,
+          "abstained": 3131,
+          "coverage": 0.3150295340188143,
+          "abstention_rate": 0.6849704659811857,
+          "true_positive": 55,
+          "true_negative": 0,
+          "false_positive": 1385,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.03819444444444445,
+          "positive_recall": 0.5238095238095238,
+          "normalized_cost_fn20_fp1_review05": 0.6454823889739663
+        }
+      },
+      {
+        "alpha": 0.4,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 1906,
+          "abstained": 2665,
+          "coverage": 0.4169765915554583,
+          "abstention_rate": 0.5830234084445417,
+          "true_positive": 71,
+          "true_negative": 0,
+          "false_positive": 1835,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.037250786988457504,
+          "positive_recall": 0.6761904761904762,
+          "normalized_cost_fn20_fp1_review05": 0.6929555895865237
+        }
+      },
+      {
+        "alpha": 0.5,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 2342,
+          "abstained": 2229,
+          "coverage": 0.5123605338000438,
+          "abstention_rate": 0.48763946619995624,
+          "true_positive": 79,
+          "true_negative": 0,
+          "false_positive": 2263,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.033731853116994025,
+          "positive_recall": 0.7523809523809524,
+          "normalized_cost_fn20_fp1_review05": 0.7388973966309341
+        }
+      },
+      {
+        "alpha": 0.6,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 2781,
+          "abstained": 1790,
+          "coverage": 0.6084007875738351,
+          "abstention_rate": 0.3915992124261649,
+          "true_positive": 88,
+          "true_negative": 0,
+          "false_positive": 2693,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.03164329377921611,
+          "positive_recall": 0.8380952380952381,
+          "normalized_cost_fn20_fp1_review05": 0.7849485889302122
+        }
+      }
+    ],
+    "0.4": [
+      {
+        "alpha": 0.3,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 1440,
+          "abstained": 3131,
+          "coverage": 0.3150295340188143,
+          "abstention_rate": 0.6849704659811857,
+          "true_positive": 55,
+          "true_negative": 0,
+          "false_positive": 1385,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.03819444444444445,
+          "positive_recall": 0.5238095238095238,
+          "normalized_cost_fn20_fp1_review05": 0.6454823889739663
+        }
+      },
+      {
+        "alpha": 0.4,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 1906,
+          "abstained": 2665,
+          "coverage": 0.4169765915554583,
+          "abstention_rate": 0.5830234084445417,
+          "true_positive": 71,
+          "true_negative": 0,
+          "false_positive": 1835,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.037250786988457504,
+          "positive_recall": 0.6761904761904762,
+          "normalized_cost_fn20_fp1_review05": 0.6929555895865237
+        }
+      },
+      {
+        "alpha": 0.5,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 2342,
+          "abstained": 2229,
+          "coverage": 0.5123605338000438,
+          "abstention_rate": 0.48763946619995624,
+          "true_positive": 79,
+          "true_negative": 0,
+          "false_positive": 2263,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.033731853116994025,
+          "positive_recall": 0.7523809523809524,
+          "normalized_cost_fn20_fp1_review05": 0.7388973966309341
+        }
+      },
+      {
+        "alpha": 0.6,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 2781,
+          "abstained": 1790,
+          "coverage": 0.6084007875738351,
+          "abstention_rate": 0.3915992124261649,
+          "true_positive": 88,
+          "true_negative": 0,
+          "false_positive": 2693,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.03164329377921611,
+          "positive_recall": 0.8380952380952381,
+          "normalized_cost_fn20_fp1_review05": 0.7849485889302122
+        }
+      },
+      {
+        "alpha": 0.7,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 3271,
+          "abstained": 1300,
+          "coverage": 0.715598337344126,
+          "abstention_rate": 0.28440166265587397,
+          "true_positive": 94,
+          "true_negative": 0,
+          "false_positive": 3177,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.028737389177621524,
+          "positive_recall": 0.8952380952380953,
+          "normalized_cost_fn20_fp1_review05": 0.8372347407569459
+        }
+      }
+    ],
+    "0.5": [
+      {
+        "alpha": 0.3,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 1440,
+          "abstained": 3131,
+          "coverage": 0.3150295340188143,
+          "abstention_rate": 0.6849704659811857,
+          "true_positive": 55,
+          "true_negative": 0,
+          "false_positive": 1385,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.03819444444444445,
+          "positive_recall": 0.5238095238095238,
+          "normalized_cost_fn20_fp1_review05": 0.6454823889739663
+        }
+      },
+      {
+        "alpha": 0.4,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 1906,
+          "abstained": 2665,
+          "coverage": 0.4169765915554583,
+          "abstention_rate": 0.5830234084445417,
+          "true_positive": 71,
+          "true_negative": 0,
+          "false_positive": 1835,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.037250786988457504,
+          "positive_recall": 0.6761904761904762,
+          "normalized_cost_fn20_fp1_review05": 0.6929555895865237
+        }
+      },
+      {
+        "alpha": 0.5,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 2342,
+          "abstained": 2229,
+          "coverage": 0.5123605338000438,
+          "abstention_rate": 0.48763946619995624,
+          "true_positive": 79,
+          "true_negative": 0,
+          "false_positive": 2263,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.033731853116994025,
+          "positive_recall": 0.7523809523809524,
+          "normalized_cost_fn20_fp1_review05": 0.7388973966309341
+        }
+      },
+      {
+        "alpha": 0.6,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 2781,
+          "abstained": 1790,
+          "coverage": 0.6084007875738351,
+          "abstention_rate": 0.3915992124261649,
+          "true_positive": 88,
+          "true_negative": 0,
+          "false_positive": 2693,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.03164329377921611,
+          "positive_recall": 0.8380952380952381,
+          "normalized_cost_fn20_fp1_review05": 0.7849485889302122
+        }
+      },
+      {
+        "alpha": 0.7,
+        "policy": "conformal_singleton",
+        "summary": {
+          "records": 4571,
+          "accepted": 3271,
+          "abstained": 1300,
+          "coverage": 0.715598337344126,
+          "abstention_rate": 0.28440166265587397,
+          "true_positive": 94,
+          "true_negative": 0,
+          "false_positive": 3177,
+          "false_negative": 0,
+          "accepted_positive_precision": 0.028737389177621524,
+          "positive_recall": 0.8952380952380953,
+          "normalized_cost_fn20_fp1_review05": 0.8372347407569459
+        }
+      }
+    ]
+  }
+}
+

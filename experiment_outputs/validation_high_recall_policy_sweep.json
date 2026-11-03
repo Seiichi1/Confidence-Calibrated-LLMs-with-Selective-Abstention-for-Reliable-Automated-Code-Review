@@ -1,0 +1,2839 @@
+{
+  "status": "complete",
+  "method": {
+    "validation_only": true,
+    "false_positive_cost": 1.0,
+    "false_negative_costs": [
+      10.0,
+      20.0,
+      50.0,
+      100.0
+    ],
+    "review_costs": [
+      0.1,
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "positive_recall_floors": [
+      0.2,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "default_scenario": {
+      "false_negative_cost": 20.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.5
+    },
+    "abstention_cost_interpretation": "each abstained record is escalated to manual review and incurs review_cost",
+    "policy_frozen": false,
+    "final_test_used": false
+  },
+  "counts": {
+    "candidate_policies": 36,
+    "scenarios": 20
+  },
+  "default_ranking": [
+    {
+      "candidate": "platt_dual_signal_exploratory",
+      "method": "platt",
+      "policy": "dual_signal_exploratory",
+      "significance": 0.5,
+      "normalized_cost": 0.36567490702253336,
+      "summary": {
+        "records": 4571,
+        "accepted": 2268,
+        "abstained": 2303,
+        "coverage": 0.49617151607963245,
+        "abstention_rate": 0.5038284839203675,
+        "true_positive": 0,
+        "true_negative": 2242,
+        "false_positive": 0,
+        "false_negative": 26,
+        "accepted_precision": 0.9885361552028219,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_conformal_singleton",
+      "method": "platt",
+      "policy": "conformal_singleton",
+      "significance": 0.5,
+      "normalized_cost": 0.36742507110041567,
+      "summary": {
+        "records": 4571,
+        "accepted": 2332,
+        "abstained": 2239,
+        "coverage": 0.5101728287026909,
+        "abstention_rate": 0.4898271712973091,
+        "true_positive": 0,
+        "true_negative": 2304,
+        "false_positive": 0,
+        "false_negative": 28,
+        "accepted_precision": 0.9879931389365352,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_conformal_singleton",
+      "method": "platt",
+      "policy": "conformal_singleton",
+      "significance": 0.3,
+      "normalized_cost": 0.3769415882739007,
+      "summary": {
+        "records": 4571,
+        "accepted": 3245,
+        "abstained": 1326,
+        "coverage": 0.7099103040910085,
+        "abstention_rate": 0.2900896959089915,
+        "true_positive": 0,
+        "true_negative": 3192,
+        "false_positive": 0,
+        "false_negative": 53,
+        "accepted_precision": 0.9836671802773498,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_dual_signal_exploratory",
+      "method": "platt",
+      "policy": "dual_signal_exploratory",
+      "significance": 0.3,
+      "normalized_cost": 0.38022314591993,
+      "summary": {
+        "records": 4571,
+        "accepted": 3095,
+        "abstained": 1476,
+        "coverage": 0.6770947276307154,
+        "abstention_rate": 0.3229052723692846,
+        "true_positive": 0,
+        "true_negative": 3045,
+        "false_positive": 0,
+        "false_negative": 50,
+        "accepted_precision": 0.9838449111470113,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_dual_signal_exploratory",
+      "method": "platt",
+      "policy": "dual_signal_exploratory",
+      "significance": 0.1,
+      "normalized_cost": 0.38766134325092977,
+      "summary": {
+        "records": 4571,
+        "accepted": 3947,
+        "abstained": 624,
+        "coverage": 0.8634872019251805,
+        "abstention_rate": 0.1365127980748195,
+        "true_positive": 0,
+        "true_negative": 3874,
+        "false_positive": 0,
+        "false_negative": 73,
+        "accepted_precision": 0.9815049404611097,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_dual_signal_exploratory",
+      "method": "platt",
+      "policy": "dual_signal_exploratory",
+      "significance": 0.05,
+      "normalized_cost": 0.39225552395537083,
+      "summary": {
+        "records": 4571,
+        "accepted": 4105,
+        "abstained": 466,
+        "coverage": 0.898052942463356,
+        "abstention_rate": 0.10194705753664406,
+        "true_positive": 0,
+        "true_negative": 4027,
+        "false_positive": 0,
+        "false_negative": 78,
+        "accepted_precision": 0.9809987819732034,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_dual_signal_exploratory",
+      "method": "platt",
+      "policy": "dual_signal_exploratory",
+      "significance": 0.2,
+      "normalized_cost": 0.3943338437978561,
+      "summary": {
+        "records": 4571,
+        "accepted": 3526,
+        "abstained": 1045,
+        "coverage": 0.7713848173266243,
+        "abstention_rate": 0.22861518267337563,
+        "true_positive": 0,
+        "true_negative": 3462,
+        "false_positive": 0,
+        "false_negative": 64,
+        "accepted_precision": 0.9818491208167895,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_conformal_singleton",
+      "method": "platt",
+      "policy": "conformal_singleton",
+      "significance": 0.01,
+      "normalized_cost": 0.4004594180704441,
+      "summary": {
+        "records": 4571,
+        "accepted": 3390,
+        "abstained": 1181,
+        "coverage": 0.7416320280026253,
+        "abstention_rate": 0.25836797199737477,
+        "true_positive": 0,
+        "true_negative": 3328,
+        "false_positive": 0,
+        "false_negative": 62,
+        "accepted_precision": 0.9817109144542773,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_conformal_singleton",
+      "method": "platt",
+      "policy": "conformal_singleton",
+      "significance": 0.2,
+      "normalized_cost": 0.4016626558739882,
+      "summary": {
+        "records": 4571,
+        "accepted": 3739,
+        "abstained": 832,
+        "coverage": 0.8179829359002406,
+        "abstention_rate": 0.18201706409975935,
+        "true_positive": 0,
+        "true_negative": 3668,
+        "false_positive": 0,
+        "false_negative": 71,
+        "accepted_precision": 0.9810109654987965,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_dual_signal_exploratory",
+      "method": "platt",
+      "policy": "dual_signal_exploratory",
+      "significance": 0.01,
+      "normalized_cost": 0.4016626558739882,
+      "summary": {
+        "records": 4571,
+        "accepted": 3219,
+        "abstained": 1352,
+        "coverage": 0.704222270837891,
+        "abstention_rate": 0.2957777291621089,
+        "true_positive": 0,
+        "true_negative": 3161,
+        "false_positive": 0,
+        "false_negative": 58,
+        "accepted_precision": 0.9819819819819819,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_conformal_singleton",
+      "method": "platt",
+      "policy": "conformal_singleton",
+      "significance": 0.1,
+      "normalized_cost": 0.4043972872456793,
+      "summary": {
+        "records": 4571,
+        "accepted": 4234,
+        "abstained": 337,
+        "coverage": 0.926274338219208,
+        "abstention_rate": 0.07372566178079194,
+        "true_positive": 0,
+        "true_negative": 4150,
+        "false_positive": 0,
+        "false_negative": 84,
+        "accepted_precision": 0.9801606046291923,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_conformal_singleton",
+      "method": "platt",
+      "policy": "conformal_singleton",
+      "significance": 0.05,
+      "normalized_cost": 0.4339313060599431,
+      "summary": {
+        "records": 4571,
+        "accepted": 4444,
+        "abstained": 127,
+        "coverage": 0.9722161452636184,
+        "abstention_rate": 0.027783854736381536,
+        "true_positive": 0,
+        "true_negative": 4348,
+        "false_positive": 0,
+        "false_negative": 96,
+        "accepted_precision": 0.9783978397839784,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_corroborated_positive",
+      "method": "platt",
+      "policy": "corroborated_positive",
+      "significance": 0.01,
+      "normalized_cost": 0.5,
+      "summary": {
+        "records": 4571,
+        "accepted": 0,
+        "abstained": 4571,
+        "coverage": 0.0,
+        "abstention_rate": 1.0,
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "accepted_precision": 0.0,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_corroborated_positive",
+      "method": "platt",
+      "policy": "corroborated_positive",
+      "significance": 0.05,
+      "normalized_cost": 0.5,
+      "summary": {
+        "records": 4571,
+        "accepted": 0,
+        "abstained": 4571,
+        "coverage": 0.0,
+        "abstention_rate": 1.0,
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "accepted_precision": 0.0,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_corroborated_positive",
+      "method": "platt",
+      "policy": "corroborated_positive",
+      "significance": 0.1,
+      "normalized_cost": 0.5,
+      "summary": {
+        "records": 4571,
+        "accepted": 0,
+        "abstained": 4571,
+        "coverage": 0.0,
+        "abstention_rate": 1.0,
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "accepted_precision": 0.0,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_corroborated_positive",
+      "method": "platt",
+      "policy": "corroborated_positive",
+      "significance": 0.2,
+      "normalized_cost": 0.5,
+      "summary": {
+        "records": 4571,
+        "accepted": 0,
+        "abstained": 4571,
+        "coverage": 0.0,
+        "abstention_rate": 1.0,
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "accepted_precision": 0.0,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_corroborated_positive",
+      "method": "platt",
+      "policy": "corroborated_positive",
+      "significance": 0.3,
+      "normalized_cost": 0.5,
+      "summary": {
+        "records": 4571,
+        "accepted": 0,
+        "abstained": 4571,
+        "coverage": 0.0,
+        "abstention_rate": 1.0,
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "accepted_precision": 0.0,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "platt_corroborated_positive",
+      "method": "platt",
+      "policy": "corroborated_positive",
+      "significance": 0.5,
+      "normalized_cost": 0.5,
+      "summary": {
+        "records": 4571,
+        "accepted": 0,
+        "abstained": 4571,
+        "coverage": 0.0,
+        "abstention_rate": 1.0,
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "accepted_precision": 0.0,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "temperature_corroborated_positive",
+      "method": "temperature",
+      "policy": "corroborated_positive",
+      "significance": 0.01,
+      "normalized_cost": 0.5005469262743382,
+      "summary": {
+        "records": 4571,
+        "accepted": 5,
+        "abstained": 4566,
+        "coverage": 0.0010938525486764385,
+        "abstention_rate": 0.9989061474513236,
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 5,
+        "false_negative": 0,
+        "accepted_precision": 0.0,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "temperature_dual_signal_exploratory",
+      "method": "temperature",
+      "policy": "dual_signal_exploratory",
+      "significance": 0.01,
+      "normalized_cost": 0.5005469262743382,
+      "summary": {
+        "records": 4571,
+        "accepted": 5,
+        "abstained": 4566,
+        "coverage": 0.0010938525486764385,
+        "abstention_rate": 0.9989061474513236,
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 5,
+        "false_negative": 0,
+        "accepted_precision": 0.0,
+        "positive_precision": 0.0,
+        "positive_recall": 0.0
+      }
+    },
+    {
+      "candidate": "temperature_corroborated_positive",
+      "method": "temperature",
+      "policy": "corroborated_positive",
+      "significance": 0.05,
+      "normalized_cost": 0.5039378691752352,
+      "summary": {
+        "records": 4571,
+        "accepted": 52,
+        "abstained": 4519,
+        "coverage": 0.011376066506234959,
+        "abstention_rate": 0.9886239334937651,
+        "true_positive": 8,
+        "true_negative": 0,
+        "false_positive": 44,
+        "false_negative": 0,
+        "accepted_precision": 0.15384615384615385,
+        "positive_precision": 0.15384615384615385,
+        "positive_recall": 0.0761904761904762
+      }
+    },
+    {
+      "candidate": "temperature_dual_signal_exploratory",
+      "method": "temperature",
+      "policy": "dual_signal_exploratory",
+      "significance": 0.05,
+      "normalized_cost": 0.5039378691752352,
+      "summary": {
+        "records": 4571,
+        "accepted": 52,
+        "abstained": 4519,
+        "coverage": 0.011376066506234959,
+        "abstention_rate": 0.9886239334937651,
+        "true_positive": 8,
+        "true_negative": 0,
+        "false_positive": 44,
+        "false_negative": 0,
+        "accepted_precision": 0.15384615384615385,
+        "positive_precision": 0.15384615384615385,
+        "positive_recall": 0.0761904761904762
+      }
+    },
+    {
+      "candidate": "temperature_conformal_singleton",
+      "method": "temperature",
+      "policy": "conformal_singleton",
+      "significance": 0.01,
+      "normalized_cost": 0.5045941807044411,
+      "summary": {
+        "records": 4571,
+        "accepted": 46,
+        "abstained": 4525,
+        "coverage": 0.010063443447823233,
+        "abstention_rate": 0.9899365565521767,
+        "true_positive": 2,
+        "true_negative": 0,
+        "false_positive": 44,
+        "false_negative": 0,
+        "accepted_precision": 0.043478260869565216,
+        "positive_precision": 0.043478260869565216,
+        "positive_recall": 0.01904761904761905
+      }
+    },
+    {
+      "candidate": "temperature_corroborated_positive",
+      "method": "temperature",
+      "policy": "corroborated_positive",
+      "significance": 0.1,
+      "normalized_cost": 0.508313279369941,
+      "summary": {
+        "records": 4571,
+        "accepted": 104,
+        "abstained": 4467,
+        "coverage": 0.022752133012469918,
+        "abstention_rate": 0.9772478669875301,
+        "true_positive": 14,
+        "true_negative": 0,
+        "false_positive": 90,
+        "false_negative": 0,
+        "accepted_precision": 0.1346153846153846,
+        "positive_precision": 0.1346153846153846,
+        "positive_recall": 0.13333333333333333
+      }
+    },
+    {
+      "candidate": "temperature_dual_signal_exploratory",
+      "method": "temperature",
+      "policy": "dual_signal_exploratory",
+      "significance": 0.1,
+      "normalized_cost": 0.508313279369941,
+      "summary": {
+        "records": 4571,
+        "accepted": 104,
+        "abstained": 4467,
+        "coverage": 0.022752133012469918,
+        "abstention_rate": 0.9772478669875301,
+        "true_positive": 14,
+        "true_negative": 0,
+        "false_positive": 90,
+        "false_negative": 0,
+        "accepted_precision": 0.1346153846153846,
+        "positive_precision": 0.1346153846153846,
+        "positive_recall": 0.13333333333333333
+      }
+    },
+    {
+      "candidate": "temperature_corroborated_positive",
+      "method": "temperature",
+      "policy": "corroborated_positive",
+      "significance": 0.2,
+      "normalized_cost": 0.5147670094071319,
+      "summary": {
+        "records": 4571,
+        "accepted": 169,
+        "abstained": 4402,
+        "coverage": 0.036972216145263616,
+        "abstention_rate": 0.9630277838547364,
+        "true_positive": 17,
+        "true_negative": 0,
+        "false_positive": 152,
+        "false_negative": 0,
+        "accepted_precision": 0.10059171597633136,
+        "positive_precision": 0.10059171597633136,
+        "positive_recall": 0.1619047619047619
+      }
+    },
+    {
+      "candidate": "temperature_dual_signal_exploratory",
+      "method": "temperature",
+      "policy": "dual_signal_exploratory",
+      "significance": 0.2,
+      "normalized_cost": 0.5147670094071319,
+      "summary": {
+        "records": 4571,
+        "accepted": 169,
+        "abstained": 4402,
+        "coverage": 0.036972216145263616,
+        "abstention_rate": 0.9630277838547364,
+        "true_positive": 17,
+        "true_negative": 0,
+        "false_positive": 152,
+        "false_negative": 0,
+        "accepted_precision": 0.10059171597633136,
+        "positive_precision": 0.10059171597633136,
+        "positive_recall": 0.1619047619047619
+      }
+    },
+    {
+      "candidate": "temperature_conformal_singleton",
+      "method": "temperature",
+      "policy": "conformal_singleton",
+      "significance": 0.05,
+      "normalized_cost": 0.5211113541894553,
+      "summary": {
+        "records": 4571,
+        "accepted": 223,
+        "abstained": 4348,
+        "coverage": 0.048785823670969154,
+        "abstention_rate": 0.9512141763290308,
+        "true_positive": 15,
+        "true_negative": 0,
+        "false_positive": 208,
+        "false_negative": 0,
+        "accepted_precision": 0.06726457399103139,
+        "positive_precision": 0.06726457399103139,
+        "positive_recall": 0.14285714285714285
+      }
+    },
+    {
+      "candidate": "temperature_corroborated_positive",
+      "method": "temperature",
+      "policy": "corroborated_positive",
+      "significance": 0.3,
+      "normalized_cost": 0.5211113541894553,
+      "summary": {
+        "records": 4571,
+        "accepted": 233,
+        "abstained": 4338,
+        "coverage": 0.05097352876832203,
+        "abstention_rate": 0.9490264712316779,
+        "true_positive": 20,
+        "true_negative": 0,
+        "false_positive": 213,
+        "false_negative": 0,
+        "accepted_precision": 0.08583690987124463,
+        "positive_precision": 0.08583690987124463,
+        "positive_recall": 0.19047619047619047
+      }
+    },
+    {
+      "candidate": "temperature_dual_signal_exploratory",
+      "method": "temperature",
+      "policy": "dual_signal_exploratory",
+      "significance": 0.3,
+      "normalized_cost": 0.5211113541894553,
+      "summary": {
+        "records": 4571,
+        "accepted": 233,
+        "abstained": 4338,
+        "coverage": 0.05097352876832203,
+        "abstention_rate": 0.9490264712316779,
+        "true_positive": 20,
+        "true_negative": 0,
+        "false_positive": 213,
+        "false_negative": 0,
+        "accepted_precision": 0.08583690987124463,
+        "positive_precision": 0.08583690987124463,
+        "positive_recall": 0.19047619047619047
+      }
+    },
+    {
+      "candidate": "temperature_corroborated_positive",
+      "method": "temperature",
+      "policy": "corroborated_positive",
+      "significance": 0.5,
+      "normalized_cost": 0.5293152483045286,
+      "summary": {
+        "records": 4571,
+        "accepted": 310,
+        "abstained": 4261,
+        "coverage": 0.06781885801793919,
+        "abstention_rate": 0.9321811419820608,
+        "true_positive": 21,
+        "true_negative": 0,
+        "false_positive": 289,
+        "false_negative": 0,
+        "accepted_precision": 0.06774193548387097,
+        "positive_precision": 0.06774193548387097,
+        "positive_recall": 0.2
+      }
+    },
+    {
+      "candidate": "temperature_dual_signal_exploratory",
+      "method": "temperature",
+      "policy": "dual_signal_exploratory",
+      "significance": 0.5,
+      "normalized_cost": 0.5293152483045286,
+      "summary": {
+        "records": 4571,
+        "accepted": 310,
+        "abstained": 4261,
+        "coverage": 0.06781885801793919,
+        "abstention_rate": 0.9321811419820608,
+        "true_positive": 21,
+        "true_negative": 0,
+        "false_positive": 289,
+        "false_negative": 0,
+        "accepted_precision": 0.06774193548387097,
+        "positive_precision": 0.06774193548387097,
+        "positive_recall": 0.2
+      }
+    },
+    {
+      "candidate": "temperature_conformal_singleton",
+      "method": "temperature",
+      "policy": "conformal_singleton",
+      "significance": 0.1,
+      "normalized_cost": 0.5464887333187486,
+      "summary": {
+        "records": 4571,
+        "accepted": 483,
+        "abstained": 4088,
+        "coverage": 0.10566615620214395,
+        "abstention_rate": 0.8943338437978561,
+        "true_positive": 29,
+        "true_negative": 0,
+        "false_positive": 454,
+        "false_negative": 0,
+        "accepted_precision": 0.060041407867494824,
+        "positive_precision": 0.060041407867494824,
+        "positive_recall": 0.2761904761904762
+      }
+    },
+    {
+      "candidate": "temperature_conformal_singleton",
+      "method": "temperature",
+      "policy": "conformal_singleton",
+      "significance": 0.2,
+      "normalized_cost": 0.5948370159702472,
+      "summary": {
+        "records": 4571,
+        "accepted": 943,
+        "abstained": 3628,
+        "coverage": 0.2063005906803763,
+        "abstention_rate": 0.7936994093196237,
+        "true_positive": 38,
+        "true_negative": 0,
+        "false_positive": 905,
+        "false_negative": 0,
+        "accepted_precision": 0.04029692470837752,
+        "positive_precision": 0.04029692470837752,
+        "positive_recall": 0.3619047619047619
+      }
+    },
+    {
+      "candidate": "temperature_conformal_singleton",
+      "method": "temperature",
+      "policy": "conformal_singleton",
+      "significance": 0.3,
+      "normalized_cost": 0.6454823889739663,
+      "summary": {
+        "records": 4571,
+        "accepted": 1440,
+        "abstained": 3131,
+        "coverage": 0.3150295340188143,
+        "abstention_rate": 0.6849704659811857,
+        "true_positive": 55,
+        "true_negative": 0,
+        "false_positive": 1385,
+        "false_negative": 0,
+        "accepted_precision": 0.03819444444444445,
+        "positive_precision": 0.03819444444444445,
+        "positive_recall": 0.5238095238095238
+      }
+    },
+    {
+      "candidate": "temperature_conformal_singleton",
+      "method": "temperature",
+      "policy": "conformal_singleton",
+      "significance": 0.5,
+      "normalized_cost": 0.7388973966309341,
+      "summary": {
+        "records": 4571,
+        "accepted": 2342,
+        "abstained": 2229,
+        "coverage": 0.5123605338000438,
+        "abstention_rate": 0.48763946619995624,
+        "true_positive": 79,
+        "true_negative": 0,
+        "false_positive": 2263,
+        "false_negative": 0,
+        "accepted_precision": 0.033731853116994025,
+        "positive_precision": 0.033731853116994025,
+        "positive_recall": 0.7523809523809524
+      }
+    }
+  ],
+  "scenario_rankings": [
+    {
+      "false_negative_cost": 10.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.1,
+      "best": [
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.01,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.05,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.1,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.2,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.3,
+          "normalized_cost": 0.1
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.15644279151170423
+          },
+          {
+            "candidate": "temperature_dual_signal_exploratory",
+            "significance": 0.5,
+            "normalized_cost": 0.15644279151170423
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.1887551957996062
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.2773572522423977
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.2773572522423977
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.5438416101509517
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.5438416101509517
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.5438416101509517
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 10.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.25,
+      "best": [
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.5,
+          "normalized_cost": 0.18283745351126668
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.5,
+          "normalized_cost": 0.18371253555020783
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.3,
+          "normalized_cost": 0.18847079413695034
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.3,
+          "normalized_cost": 0.190111572959965
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.1,
+          "normalized_cost": 0.19383067162546488
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.29626996280901335
+          },
+          {
+            "candidate": "temperature_dual_signal_exploratory",
+            "significance": 0.5,
+            "normalized_cost": 0.29626996280901335
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.3229052723692846
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.39641216364034126
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.39641216364034126
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.6169875300809451
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.6169875300809451
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.6169875300809451
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 10.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.5,
+      "best": [
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.1,
+          "normalized_cost": 0.22063005906803762
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.05,
+          "normalized_cost": 0.22161452636184642
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.05,
+          "normalized_cost": 0.22391161671406695
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.1,
+          "normalized_cost": 0.22795887114416977
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.2,
+          "normalized_cost": 0.24633559396193394
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.5293152483045286
+          },
+          {
+            "candidate": "temperature_dual_signal_exploratory",
+            "significance": 0.5,
+            "normalized_cost": 0.5293152483045286
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.5464887333187486
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.5948370159702472
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.5948370159702472
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.7388973966309341
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.7388973966309341
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.7388973966309341
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 10.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 1.0,
+      "best": [
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.05,
+          "normalized_cost": 0.2378035440822577
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.1,
+          "normalized_cost": 0.2574928899584336
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.05,
+          "normalized_cost": 0.2725880551301684
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.1,
+          "normalized_cost": 0.2962152701815795
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.2,
+          "normalized_cost": 0.3373441260118136
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.991686720630059
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.9936556552176766
+          },
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.9954058192955589
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.991686720630059
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 10.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 2.0,
+      "best": [
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.05,
+          "normalized_cost": 0.26558739881863924
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.1,
+          "normalized_cost": 0.33121855173922554
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.05,
+          "normalized_cost": 0.3745351126668125
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.1,
+          "normalized_cost": 0.43272806825639903
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.2,
+          "normalized_cost": 0.519361190111573
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 1.7853861299496827
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 1.8879894990155328
+          },
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 1.9275869612776197
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 1.7853861299496827
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 20.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.1,
+      "best": [
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.01,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.05,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.1,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.2,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.3,
+          "normalized_cost": 0.1
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.15644279151170423
+          },
+          {
+            "candidate": "temperature_dual_signal_exploratory",
+            "significance": 0.5,
+            "normalized_cost": 0.15644279151170423
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.1887551957996062
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.2773572522423977
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.2773572522423977
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.5438416101509517
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.5438416101509517
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.5438416101509517
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 20.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.25,
+      "best": [
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.5,
+          "normalized_cost": 0.23971778604244148
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.5,
+          "normalized_cost": 0.24496827827608839
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.01,
+          "normalized_cost": 0.25
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.05,
+          "normalized_cost": 0.25
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.1,
+          "normalized_cost": 0.25
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.29626996280901335
+          },
+          {
+            "candidate": "temperature_dual_signal_exploratory",
+            "significance": 0.5,
+            "normalized_cost": 0.29626996280901335
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.3229052723692846
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.39641216364034126
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.39641216364034126
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.6169875300809451
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.6169875300809451
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.6169875300809451
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 20.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.5,
+      "best": [
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.5,
+          "normalized_cost": 0.36567490702253336
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.5,
+          "normalized_cost": 0.36742507110041567
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.3,
+          "normalized_cost": 0.3769415882739007
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.3,
+          "normalized_cost": 0.38022314591993
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.1,
+          "normalized_cost": 0.38766134325092977
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.5293152483045286
+          },
+          {
+            "candidate": "temperature_dual_signal_exploratory",
+            "significance": 0.5,
+            "normalized_cost": 0.5293152483045286
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.5464887333187486
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.5948370159702472
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.5948370159702472
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.7388973966309341
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.7388973966309341
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.7388973966309341
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 20.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 1.0,
+      "best": [
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.1,
+          "normalized_cost": 0.44126011813607524
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.05,
+          "normalized_cost": 0.44322905272369284
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.05,
+          "normalized_cost": 0.4478232334281339
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.1,
+          "normalized_cost": 0.45591774228833953
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.2,
+          "normalized_cost": 0.4926711879238679
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.991686720630059
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.9936556552176766
+          },
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.9954058192955589
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.991686720630059
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 20.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 2.0,
+      "best": [
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.05,
+          "normalized_cost": 0.4756070881645154
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.1,
+          "normalized_cost": 0.5149857799168672
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.05,
+          "normalized_cost": 0.5451761102603369
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.1,
+          "normalized_cost": 0.592430540363159
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.2,
+          "normalized_cost": 0.6746882520236273
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 1.7853861299496827
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 1.8879894990155328
+          },
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 1.9275869612776197
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 1.7853861299496827
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 50.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.1,
+      "best": [
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.01,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.05,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.1,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.2,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.3,
+          "normalized_cost": 0.1
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.15644279151170423
+          },
+          {
+            "candidate": "temperature_dual_signal_exploratory",
+            "significance": 0.5,
+            "normalized_cost": 0.15644279151170423
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.1887551957996062
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.2773572522423977
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.2773572522423977
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.5438416101509517
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.5438416101509517
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.5438416101509517
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 50.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.25,
+      "best": [
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.01,
+          "normalized_cost": 0.25
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.05,
+          "normalized_cost": 0.25
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.1,
+          "normalized_cost": 0.25
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.2,
+          "normalized_cost": 0.25
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.3,
+          "normalized_cost": 0.25
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.29626996280901335
+          },
+          {
+            "candidate": "temperature_dual_signal_exploratory",
+            "significance": 0.5,
+            "normalized_cost": 0.29626996280901335
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.3229052723692846
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.39641216364034126
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.39641216364034126
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.6169875300809451
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.6169875300809451
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.6169875300809451
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 50.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.5,
+      "best": [
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.01,
+          "normalized_cost": 0.5
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.05,
+          "normalized_cost": 0.5
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.1,
+          "normalized_cost": 0.5
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.2,
+          "normalized_cost": 0.5
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.3,
+          "normalized_cost": 0.5
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.5293152483045286
+          },
+          {
+            "candidate": "temperature_dual_signal_exploratory",
+            "significance": 0.5,
+            "normalized_cost": 0.5293152483045286
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.5464887333187486
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.5948370159702472
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.5948370159702472
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.7388973966309341
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.7388973966309341
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.7388973966309341
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 50.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 1.0,
+      "best": [
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.5,
+          "normalized_cost": 0.7882301465762416
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.5,
+          "normalized_cost": 0.7961058849267119
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.3,
+          "normalized_cost": 0.8698315467075038
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.3,
+          "normalized_cost": 0.8698315467075038
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.2,
+          "normalized_cost": 0.9286808138262962
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.991686720630059
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.9936556552176766
+          },
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.9954058192955589
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.991686720630059
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 50.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 2.0,
+      "best": [
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.05,
+          "normalized_cost": 1.05709910304091
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.1,
+          "normalized_cost": 1.0662874644497922
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.1,
+          "normalized_cost": 1.071537956683439
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.05,
+          "normalized_cost": 1.105666156202144
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.2,
+          "normalized_cost": 1.14066943775979
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 1.7853861299496827
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 1.8879894990155328
+          },
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 1.9275869612776197
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 1.7853861299496827
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 100.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.1,
+      "best": [
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.01,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.05,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.1,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.2,
+          "normalized_cost": 0.1
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.3,
+          "normalized_cost": 0.1
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.15644279151170423
+          },
+          {
+            "candidate": "temperature_dual_signal_exploratory",
+            "significance": 0.5,
+            "normalized_cost": 0.15644279151170423
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.1887551957996062
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.2773572522423977
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.2773572522423977
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.5438416101509517
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.5438416101509517
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.371494202581492
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.5438416101509517
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 100.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.25,
+      "best": [
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.01,
+          "normalized_cost": 0.25
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.05,
+          "normalized_cost": 0.25
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.1,
+          "normalized_cost": 0.25
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.2,
+          "normalized_cost": 0.25
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.3,
+          "normalized_cost": 0.25
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.29626996280901335
+          },
+          {
+            "candidate": "temperature_dual_signal_exploratory",
+            "significance": 0.5,
+            "normalized_cost": 0.29626996280901335
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.3229052723692846
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.39641216364034126
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.39641216364034126
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.6169875300809451
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.6169875300809451
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.4742397724786699
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.6169875300809451
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 100.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 0.5,
+      "best": [
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.01,
+          "normalized_cost": 0.5
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.05,
+          "normalized_cost": 0.5
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.1,
+          "normalized_cost": 0.5
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.2,
+          "normalized_cost": 0.5
+        },
+        {
+          "candidate": "platt_corroborated_positive",
+          "significance": 0.3,
+          "normalized_cost": 0.5
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.5293152483045286
+          },
+          {
+            "candidate": "temperature_dual_signal_exploratory",
+            "significance": 0.5,
+            "normalized_cost": 0.5293152483045286
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.5464887333187486
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.5948370159702472
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.5948370159702472
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.7388973966309341
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.7388973966309341
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.6454823889739663
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.7388973966309341
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 100.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 1.0,
+      "best": [
+        {
+          "candidate": "temperature_conformal_singleton",
+          "significance": 0.5,
+          "normalized_cost": 0.9827171297309123
+        },
+        {
+          "candidate": "temperature_conformal_singleton",
+          "significance": 0.3,
+          "normalized_cost": 0.9879676219645592
+        },
+        {
+          "candidate": "temperature_conformal_singleton",
+          "significance": 0.2,
+          "normalized_cost": 0.991686720630059
+        },
+        {
+          "candidate": "temperature_conformal_singleton",
+          "significance": 0.1,
+          "normalized_cost": 0.9936556552176766
+        },
+        {
+          "candidate": "temperature_corroborated_positive",
+          "significance": 0.5,
+          "normalized_cost": 0.9954058192955589
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.991686720630059
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 0.9936556552176766
+          },
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 0.9954058192955589
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 0.991686720630059
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 0.9827171297309123
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 0.9879676219645592
+          }
+        ]
+      }
+    },
+    {
+      "false_negative_cost": 100.0,
+      "false_positive_cost": 1.0,
+      "review_cost": 2.0,
+      "best": [
+        {
+          "candidate": "temperature_conformal_singleton",
+          "significance": 0.5,
+          "normalized_cost": 1.4703565959308684
+        },
+        {
+          "candidate": "platt_dual_signal_exploratory",
+          "significance": 0.5,
+          "normalized_cost": 1.5764602931524831
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.5,
+          "normalized_cost": 1.5922117698534237
+        },
+        {
+          "candidate": "temperature_conformal_singleton",
+          "significance": 0.3,
+          "normalized_cost": 1.672938087945745
+        },
+        {
+          "candidate": "platt_conformal_singleton",
+          "significance": 0.3,
+          "normalized_cost": 1.7396630934150077
+        }
+      ],
+      "best_by_positive_recall_floor": {
+        "0.2": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 1.7853861299496827
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.1,
+            "normalized_cost": 1.8879894990155328
+          },
+          {
+            "candidate": "temperature_corroborated_positive",
+            "significance": 0.5,
+            "normalized_cost": 1.9275869612776197
+          }
+        ],
+        "0.3": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.2,
+            "normalized_cost": 1.7853861299496827
+          }
+        ],
+        "0.4": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          }
+        ],
+        "0.5": [
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.5,
+            "normalized_cost": 1.4703565959308684
+          },
+          {
+            "candidate": "temperature_conformal_singleton",
+            "significance": 0.3,
+            "normalized_cost": 1.672938087945745
+          }
+        ]
+      }
+    }
+  ]
+}
+

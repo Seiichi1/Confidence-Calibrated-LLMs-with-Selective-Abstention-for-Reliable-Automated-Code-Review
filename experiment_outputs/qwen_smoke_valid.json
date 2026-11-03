@@ -1,0 +1,142 @@
+{
+  "status": "complete",
+  "model": {
+    "source": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "revision": "2e1fd39",
+    "dtype": "torch.float16",
+    "device": "cuda:0"
+  },
+  "run": {
+    "partition": "valid",
+    "records_processed": 3,
+    "retained_manifest_records": 23033,
+    "sample_count": 3,
+    "seed": 12345,
+    "max_new_tokens": 16,
+    "prompt_contract": "code-only YES/NO classification",
+    "data": "/content/drive/MyDrive/primevul/primevul_valid.jsonl",
+    "manifest": "/content/drive/MyDrive/primevul/thesis_primevul_leakage_controlled_manifest.json",
+    "elapsed_seconds": 2.9,
+    "output_format": "json"
+  },
+  "results": [
+    {
+      "record": {
+        "idx": 161816,
+        "target": 0,
+        "project": "Chrome",
+        "func_hash": 99565885850033950966117426207956082917
+      },
+      "response": "YES",
+      "prediction": "YES",
+      "first_token_top5": [
+        {
+          "token_id": 14004,
+          "token": "YES",
+          "probability": 0.8008556962013245
+        },
+        {
+          "token_id": 8996,
+          "token": "NO",
+          "probability": 0.1678684800863266
+        },
+        {
+          "token_id": 7,
+          "token": "(",
+          "probability": 0.013018387369811535
+        },
+        {
+          "token_id": 9454,
+          "token": "Yes",
+          "probability": 0.008100541308522224
+        },
+        {
+          "token_id": 16,
+          "token": "1",
+          "probability": 0.004816486965864897
+        }
+      ],
+      "prompt_sha256": "5b254eae7f40c53291a47db354aca926ac27f31b80b672afff4586fe92c48256",
+      "record_number": 334
+    },
+    {
+      "record": {
+        "idx": 338554,
+        "target": 0,
+        "project": "linux",
+        "func_hash": 137330439489195027473028396433574846995
+      },
+      "response": "YES",
+      "prediction": "YES",
+      "first_token_top5": [
+        {
+          "token_id": 14004,
+          "token": "YES",
+          "probability": 0.8114317059516907
+        },
+        {
+          "token_id": 8996,
+          "token": "NO",
+          "probability": 0.15730321407318115
+        },
+        {
+          "token_id": 7,
+          "token": "(",
+          "probability": 0.013803706504404545
+        },
+        {
+          "token_id": 9454,
+          "token": "Yes",
+          "probability": 0.00827188789844513
+        },
+        {
+          "token_id": 16,
+          "token": "1",
+          "probability": 0.004156416282057762
+        }
+      ],
+      "prompt_sha256": "69446b905f8c1ebec739a8b301e721a32693aa76202eb0cf5f59c52bd8bd2b2f",
+      "record_number": 10288
+    },
+    {
+      "record": {
+        "idx": 385336,
+        "target": 0,
+        "project": "libxml2",
+        "func_hash": 154333377094817020976620410807770985644
+      },
+      "response": "YES",
+      "prediction": "YES",
+      "first_token_top5": [
+        {
+          "token_id": 14004,
+          "token": "YES",
+          "probability": 0.7807720899581909
+        },
+        {
+          "token_id": 8996,
+          "token": "NO",
+          "probability": 0.18544963002204895
+        },
+        {
+          "token_id": 7,
+          "token": "(",
+          "probability": 0.01391956303268671
+        },
+        {
+          "token_id": 9454,
+          "token": "Yes",
+          "probability": 0.009305408224463463
+        },
+        {
+          "token_id": 16,
+          "token": "1",
+          "probability": 0.0044049425050616264
+        }
+      ],
+      "prompt_sha256": "f8f273e06091b77fdfdc2e9dc58b48dd3391c951f9ece07b320a1e87ffcb9538",
+      "record_number": 14376
+    }
+  ]
+}
+

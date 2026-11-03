@@ -1,0 +1,13 @@
+# Never commit raw dataset partitions or downloaded archives into this evidence bundle.
+*.zip
+PrimeVul_v0.1*
+file_contents/
+*.sqlite
+*.db
+primevul_train.jsonl
+primevul_valid.jsonl
+primevul_test.jsonl
+primevul_train_paired.jsonl
+primevul_valid_paired.jsonl
+primevul_test_paired.jsonl
+

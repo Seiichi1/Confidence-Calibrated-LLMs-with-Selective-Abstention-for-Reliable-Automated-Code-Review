@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "model": {
+    "source": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "revision": "2e1fd39",
+    "dtype": "torch.float16",
+    "device": "cuda:0"
+  },
+  "run": {
+    "partition": "valid",
+    "records_processed": 23033,
+    "records_processed_this_run": 23033,
+    "retained_manifest_records": 23033,
+    "sample_count": 0,
+    "seed": 12345,
+    "max_new_tokens": 16,
+    "max_input_tokens": 4096,
+    "oom_retry_input_tokens": 2048,
+    "resume_full_run": false,
+    "prompt_contract": "code-only YES/NO classification",
+    "data": "/content/drive/MyDrive/primevul/primevul_valid.jsonl",
+    "manifest": "/content/drive/MyDrive/primevul/thesis_primevul_leakage_controlled_manifest.json",
+    "elapsed_seconds": 4430.206,
+    "output_format": "jsonl"
+  }
+}
+

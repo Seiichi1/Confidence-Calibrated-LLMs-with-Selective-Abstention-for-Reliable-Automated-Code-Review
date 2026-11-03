@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430">
+  <title>PrimeVul leakage-control flow</title>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#24415f"/></marker></defs>
+  <rect width="1100" height="430" fill="#ffffff"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle">
+    <rect x="35" y="150" width="190" height="90" rx="12" fill="#e9f2fb" stroke="#2d628f" stroke-width="2"/>
+    <text x="130" y="184" fill="#17324d"><tspan x="130">Raw PrimeVul</tspan><tspan x="130" dy="25">224,533 records</tspan><tspan x="130" dy="25">train/valid/test</tspan></text>
+    <rect x="275" y="150" width="190" height="90" rx="12" fill="#eaf7f3" stroke="#23806d" stroke-width="2"/>
+    <text x="370" y="184" fill="#174d42"><tspan x="370">SimHash scan</tspan><tspan x="370" dy="25">7,626,863</tspan><tspan x="370" dy="25">candidates</tspan></text>
+    <rect x="515" y="150" width="190" height="90" rx="12" fill="#fff3df" stroke="#b66b18" stroke-width="2"/>
+    <text x="610" y="184" fill="#6f4210"><tspan x="610">Jaccard + provenance</tspan><tspan x="610" dy="25">2,872 verified</tspan><tspan x="610" dy="25">1,795 high priority</tspan></text>
+    <rect x="755" y="85" width="145" height="90" rx="12" fill="#f4ebfa" stroke="#8154a4" stroke-width="2"/>
+    <text x="827" y="119" fill="#4e2f68"><tspan x="827">Validation</tspan><tspan x="827" dy="25">23,948 - 915</tspan><tspan x="827" dy="25">= 23,033</tspan></text>
+    <rect x="755" y="260" width="145" height="90" rx="12" fill="#fbecec" stroke="#aa4141" stroke-width="2"/>
+    <text x="827" y="294" fill="#6b2525"><tspan x="827">Locked test</tspan><tspan x="827" dy="25">24,788 - 780</tspan><tspan x="827" dy="25">= 24,008</tspan></text>
+    <rect x="945" y="150" width="120" height="90" rx="12" fill="#eaf7f3" stroke="#23806d" stroke-width="2"/>
+    <text x="1005" y="184" fill="#174d42"><tspan x="1005">Raw files</tspan><tspan x="1005" dy="25">unchanged</tspan><tspan x="1005" dy="25">manifest only</tspan></text>
+  </g>
+  <g stroke="#24415f" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M225 195 H275"/><path d="M465 195 H515"/><path d="M705 170 H755"/><path d="M705 230 H755"/><path d="M900 130 H945"/><path d="M900 300 H945"/>
+  </g>
+</svg>
+

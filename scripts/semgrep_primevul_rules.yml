@@ -1,0 +1,42 @@
+rules:
+  - id: primevul-c-unsafe-copy-and-format
+    languages: [c, cpp]
+    severity: WARNING
+    message: Potentially unsafe unbounded copy or formatted output operation.
+    metadata:
+      cwe: [CWE-120, CWE-134]
+      thesis_role: corroboration-baseline
+    patterns:
+      - pattern-either:
+          - pattern: strcpy(...)
+          - pattern: strcat(...)
+          - pattern: sprintf(...)
+          - pattern: vsprintf(...)
+          - pattern: gets(...)
+
+  - id: primevul-c-command-execution
+    languages: [c, cpp]
+    severity: WARNING
+    message: Command execution through system-like API requires security review.
+    metadata:
+      cwe: [CWE-78]
+      thesis_role: corroboration-baseline
+    patterns:
+      - pattern-either:
+          - pattern: system(...)
+          - pattern: popen(...)
+          - pattern: _popen(...)
+
+  - id: primevul-c-dangerous-memory-operation
+    languages: [c, cpp]
+    severity: WARNING
+    message: Low-level memory operation requires bounds and lifetime review.
+    metadata:
+      cwe: [CWE-119, CWE-787]
+      thesis_role: corroboration-baseline
+    patterns:
+      - pattern-either:
+          - pattern: memcpy(...)
+          - pattern: memmove(...)
+          - pattern: memset(...)
+

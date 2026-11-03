@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+  <title>Project-held-out operating-point trade-off</title>
+  <rect width="900" height="560" fill="#ffffff"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#263746">
+    <text x="450" y="38" font-size="24" text-anchor="middle" font-weight="bold">Project-held-out operating points</text>
+    <text x="450" y="66" font-size="16" text-anchor="middle">Increasing alpha raises coverage and recall but lowers accepted precision.</text>
+    <line x1="105" y1="470" x2="820" y2="470" stroke="#607080" stroke-width="2"/><line x1="105" y1="90" x2="105" y2="470" stroke="#607080" stroke-width="2"/>
+    <g stroke="#d7dee5" stroke-width="1"><line x1="105" y1="375" x2="820" y2="375"/><line x1="105" y1="280" x2="820" y2="280"/><line x1="105" y1="185" x2="820" y2="185"/><line x1="105" y1="90" x2="820" y2="90"/></g>
+    <g font-size="14" fill="#526273"><text x="95" y="475" text-anchor="end">0</text><text x="95" y="380" text-anchor="end">25</text><text x="95" y="285" text-anchor="end">50</text><text x="95" y="190" text-anchor="end">75</text><text x="95" y="95" text-anchor="end">100</text><text x="460" y="515" text-anchor="middle">Coverage (%)</text><text x="30" y="280" text-anchor="middle" transform="rotate(-90 30 280)">Metric (%)</text></g>
+    <polyline points="126,459 162,438" fill="none" stroke="#2d628f" stroke-width="4"/>
+    <circle cx="126" cy="459" r="9" fill="#23806d"/><circle cx="162" cy="438" r="9" fill="#b66b18"/>
+    <text x="126" y="445" font-size="14" text-anchor="middle">alpha 0.10</text><text x="162" y="425" font-size="14" text-anchor="middle">alpha 0.50</text>
+    <g font-size="15"><rect x="590" y="105" width="16" height="16" fill="#23806d"/><text x="615" y="118">Precision: 11.01 -> 8.86</text><rect x="590" y="132" width="16" height="16" fill="#b66b18"/><text x="615" y="145">Recall: 11.32 -> 25.23</text></g>
+    <text x="126" y="495" font-size="13" text-anchor="middle">2.89%</text><text x="162" y="495" font-size="13" text-anchor="middle">8.01%</text>
+  </g>
+</svg>
+
