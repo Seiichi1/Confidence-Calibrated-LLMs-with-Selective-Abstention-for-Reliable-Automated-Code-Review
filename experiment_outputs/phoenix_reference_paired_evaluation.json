@@ -1,0 +1,39 @@
+{
+  "status": "complete",
+  "reference": {
+    "system": "Phoenix",
+    "paper": "https://arxiv.org/abs/2604.19012",
+    "repository": "https://github.com/Nothing256/Phoenix",
+    "configuration": {
+      "agent1": "Qwen3.5-9B",
+      "agent2": "Qwen2.5-Coder-14B-Instruct",
+      "agent3": "Qwen3.5-9B"
+    }
+  },
+  "protocol": {
+    "dataset": "PrimeVul paired test set",
+    "source_samples": 870,
+    "source_pairs": 435,
+    "evaluated_samples": 854,
+    "unparsed_samples": 5,
+    "effective_pairs": 427,
+    "note": "This is a paired-benchmark reference and is not directly comparable to the 24,008-record natural locked test."
+  },
+  "confusion_matrix": {
+    "tp": 369,
+    "fp": 97,
+    "tn": 328,
+    "fn": 60
+  },
+  "metrics": {
+    "accuracy": 0.8161592505854801,
+    "bad_precision": 0.7918454935622318,
+    "bad_recall": 0.8601398601398601,
+    "bad_f1": 0.8245815646298473,
+    "pair_correct": 0.644,
+    "correct_pairs": 275,
+    "total_pairs": 427
+  },
+  "verified_command": "python scripts/evaluate.py --input_file primevul_judged_paired_test_A2_Qwen2.5-Coder-14B-Instruct_A3_Qwen3.5-9B.jsonl --raw_file primevul_test_paired.jsonl"
+}
+
