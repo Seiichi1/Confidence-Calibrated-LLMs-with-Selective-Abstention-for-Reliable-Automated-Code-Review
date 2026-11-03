@@ -205,6 +205,47 @@ Frozen hybrid & 452 & 36 & 416 & 23,556 & 1.88\% & 7.96\% & 6.90\%\\
 
 \begin{figure}[htbp]
 \centering
+\begin{tikzpicture}[x=1cm,y=1cm]
+  % The left panel uses the full benchmark scale to show alert burden.
+  \draw[->] (0,0) -- (4.0,0);
+  \node[font=\scriptsize] at (2.0,-.92) {Alert load (\% of test records)};
+  \draw[->] (0,0) -- (0,3.0);
+  \draw[gray!25,dashed] (0,1.5) -- (3.7,1.5);
+  \draw[gray!25,dashed] (0,3.0) -- (3.7,3.0);
+  \fill[blue!55] (0.55,0) rectangle (1.25,2.9724);
+  \fill[teal!65!black] (2.25,0) rectangle (2.95,0.0564);
+  \node[font=\scriptsize,align=center,text width=1.35cm] at (0.9,-.38) {Raw Qwen};
+  \node[font=\scriptsize,align=center,text width=1.55cm] at (2.6,-.38) {Frozen hybrid};
+  \node[font=\scriptsize,anchor=south] at (0.9,2.9724) {99.08\%};
+  \node[font=\scriptsize,anchor=west] at (2.95,0.10) {1.88\%};
+  \node[font=\tiny,anchor=east] at (-.08,3.0) {100};
+  \node[font=\tiny,anchor=east] at (-.08,1.5) {50};
+  \node[font=\tiny,anchor=east] at (-.08,0) {0};
+
+  % The right panel focuses on the quality of the accepted alert queue.
+  \draw[->] (5.0,0) -- (9.0,0);
+  \node[font=\scriptsize] at (7.0,-.92) {Accepted-alert precision (\%)};
+  \draw[->] (5.0,0) -- (5.0,3.0);
+  \draw[gray!25,dashed] (5.0,1.5) -- (8.7,1.5);
+  \draw[gray!25,dashed] (5.0,3.0) -- (8.7,3.0);
+  \fill[blue!55] (5.55,0) rectangle (6.25,0.603);
+  \fill[teal!65!black] (7.25,0) rectangle (7.95,2.388);
+  \node[font=\scriptsize,align=center,text width=1.35cm] at (5.9,-.38) {Raw Qwen};
+  \node[font=\scriptsize,align=center,text width=1.55cm] at (7.6,-.38) {Frozen hybrid};
+  \node[font=\scriptsize,anchor=south] at (5.9,0.603) {2.01\%};
+  \node[font=\scriptsize,anchor=south] at (7.6,2.388) {7.96\%};
+  \node[font=\tiny,anchor=east] at (4.92,3.0) {10};
+  \node[font=\tiny,anchor=east] at (4.92,1.5) {5};
+  \node[font=\tiny,anchor=east] at (4.92,0) {0};
+
+  \node[draw=orange!80!black,fill=orange!10,rounded corners,align=center,font=\scriptsize,text width=3.0cm] at (4.5,3.65) {98.1\% fewer alerts\\+5.95 percentage points precision};
+\end{tikzpicture}
+\caption{Operational value of selective triage on the locked test. The frozen hybrid reduces the alert queue from 23,788 to 452 records while increasing precision among accepted alerts from 2.01\% to 7.96\%.}
+\label{fig:operational-impact}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
 \begin{tikzpicture}
   \draw[->] (0,0) -- (7.2,0);
   \draw[->] (0,0) -- (0,5.2);
@@ -229,12 +270,29 @@ Frozen hybrid & 452 & 36 & 416 & 23,556 & 1.88\% & 7.96\% & 6.90\%\\
   \node[font=\tiny, text width=.8cm, align=center] at (2.58,-.35) {Temp.};
   \node[font=\scriptsize, text width=1.0cm, align=center] at (4.28,-.35) {Rules};
   \node[font=\scriptsize, text width=1.4cm, align=center] at (5.68,-.35) {Frozen hybrid};
-  \fill[blue!55] (1.8,4.8) rectangle (2.0,4.95); \node[anchor=west,font=\scriptsize] at (2.05,4.875) {Coverage};
-  \fill[teal!60] (3.0,4.8) rectangle (3.2,4.95); \node[anchor=west,font=\scriptsize] at (3.25,4.875) {Precision};
-  \fill[orange!70] (4.4,4.8) rectangle (4.6,4.95); \node[anchor=west,font=\scriptsize] at (4.65,4.875) {Recall};
+  \fill[blue!55] (1.1,4.8) rectangle (1.3,4.95); \node[anchor=west,font=\tiny] at (1.35,4.875) {Coverage};
+  \fill[teal!60] (2.8,4.8) rectangle (3.0,4.95); \node[anchor=west,font=\tiny] at (3.05,4.875) {Precision};
+  \fill[orange!70] (4.55,4.8) rectangle (4.75,4.95); \node[anchor=west,font=\tiny] at (4.8,4.875) {Recall};
 \end{tikzpicture}
 \caption{Official locked-test comparison. The frozen hybrid improves precision among accepted alerts, but the gain is accompanied by substantially lower coverage and vulnerable-record recall.}
 \label{fig:locked-comparison}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=7mm and 8mm]
+  \node[paperbox,minimum width=2.55cm,text width=2.55cm,minimum height=1.0cm] (test) {Locked test\\24,008 records};
+  \node[paperbox,minimum width=3.0cm,text width=3.0cm,minimum height=1.15cm,right=of test,yshift=9mm] (conf) {Temperature + conformal\\2,319 alerts\\4.66\% precision};
+  \node[paperbox,minimum width=3.0cm,text width=3.0cm,minimum height=1.15cm,right=of test,yshift=-9mm] (rule) {Semgrep only\\1,514 alerts\\6.87\% precision};
+  \node[papersmall,minimum width=3.15cm,text width=3.15cm,minimum height=1.15cm,right=of conf,yshift=-9mm] (hybrid) {Intersection hybrid\\452 alerts\\7.96\% precision\\98.12\% abstained};
+  \draw[paperarrow] (test) -- (conf);
+  \draw[paperarrow] (test) -- (rule);
+  \draw[paperarrow] (conf) -- (hybrid);
+  \draw[paperarrow] (rule) -- (hybrid);
+  \node[font=\scriptsize,align=center,below=of test] {The final queue requires both\\calibrated acceptance and rule evidence};
+\end{tikzpicture}
+\caption{How corroboration narrows the review queue. Calibration and Semgrep each produce a selective candidate set; the hybrid accepts only their intersection, yielding a smaller queue with higher accepted-alert precision.}
+\label{fig:hybrid-funnel}
 \end{figure}
 
 The frozen hybrid has the highest accepted-positive precision among the compared official-test policies. Its precision is 5.95 percentage points higher than raw Qwen, but its coverage and vulnerable-record recall are much lower. This is the expected cost of strict selective acceptance, not evidence that the hybrid is a complete vulnerability detector.
@@ -257,6 +315,30 @@ Semgrep only & -4.42 & +1.10 & -13.03\\
 \bottomrule
 \end{tabular}}
 \end{table}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=.62cm,y=1cm]
+  \draw[->] (0,0) -- (10.8,0);
+  \node[font=\scriptsize] at (5.4,-.55) {Precision gain over raw Qwen (percentage points)};
+  \draw[gray!55,dashed] (0,-.35) -- (0,2.35);
+  \foreach \x/\label in {0/0,2/2,4/4,6/6,8/8,10/10} {
+    \draw[gray!35] (\x,-.06) -- (\x,.06);
+    \node[font=\scriptsize,below] at (\x,-.06) {\label};
+  }
+  \node[font=\scriptsize,anchor=east] at (-.15,1.65) {Record-level};
+  \node[font=\scriptsize,anchor=east] at (-.15,.55) {Project-clustered};
+  \draw[very thick,blue!70!black] (3.60,1.65) -- (8.54,1.65);
+  \fill[blue!70!black] (5.95,1.65) circle (2.6pt);
+  \draw[very thick,teal!65!black] (3.48,.55) -- (8.75,.55);
+  \fill[teal!65!black] (5.95,.55) circle (2.6pt);
+  \node[font=\scriptsize,anchor=south] at (5.95,1.65) {+5.95};
+  \node[font=\scriptsize,anchor=north] at (5.95,.55) {+5.95};
+  \node[draw=teal!65!black,fill=teal!8,rounded corners,align=center,font=\scriptsize,text width=3.0cm] at (8.4,2.25) {Both 95\% intervals remain above zero};
+\end{tikzpicture}
+\caption{Sensitivity of the hybrid precision improvement to the resampling unit. The point estimate is +5.95 percentage points in both analyses, and both the record-level and project-clustered 95\% intervals exclude zero.}
+\label{fig:precision-robustness}
+\end{figure}
 
 \subsection{Project-held-out candidate}
 

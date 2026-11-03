@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img" aria-labelledby="title desc">
+  <title id="title">Precision gain robustness</title>
+  <desc id="desc">The hybrid precision gain over raw Qwen is 5.95 percentage points, with positive record-level and project-clustered 95 percent intervals.</desc>
+  <style>text{font-family:Arial,sans-serif;fill:#1f2937} .axis{stroke:#374151;stroke-width:2}.grid{stroke:#d1d5db;stroke-dasharray:5 5}.record{stroke:#3730a3;stroke-width:7}.project{stroke:#087f81;stroke-width:7}.point{fill:#111827}.small{font-size:18px}.label{font-size:21px}.callout{fill:#e4f5f3;stroke:#087f81;stroke-width:2}</style>
+  <rect width="1000" height="360" fill="#ffffff"/>
+  <text x="500" y="32" text-anchor="middle" class="label">Precision gain over raw Qwen (percentage points)</text>
+  <g transform="translate(130,75)">
+    <line class="axis" x1="0" y1="205" x2="740" y2="205"/>
+    <line class="grid" x1="0" y1="20" x2="0" y2="205"/>
+    <g class="small"><text x="0" y="235" text-anchor="middle">0</text><text x="148" y="235" text-anchor="middle">2</text><text x="296" y="235" text-anchor="middle">4</text><text x="444" y="235" text-anchor="middle">6</text><text x="592" y="235" text-anchor="middle">8</text><text x="740" y="235" text-anchor="middle">10</text></g>
+    <text x="-16" y="92" text-anchor="end" class="label">Record-level</text><text x="-16" y="172" text-anchor="end" class="label">Project-clustered</text>
+    <line class="record" x1="266.4" y1="85" x2="631.96" y2="85"/><circle class="point" cx="440.3" cy="85" r="7"/>
+    <line class="project" x1="257.52" y1="165" x2="647.5" y2="165"/><circle class="point" cx="440.3" cy="165" r="7"/>
+    <text x="440.3" y="62" text-anchor="middle" class="small">+5.95</text><text x="440.3" y="195" text-anchor="middle" class="small">+5.95</text>
+  </g>
+  <rect class="callout" x="635" y="55" width="295" height="58" rx="12"/><text x="782" y="80" text-anchor="middle" class="small">Both 95% intervals remain</text><text x="782" y="102" text-anchor="middle" class="small">above zero.</text>
+</svg>
+
