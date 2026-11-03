@@ -26,6 +26,8 @@ These are the generated results used to support the paper:
 - Validation policy sweeps and locked-test/project-clustered statistics.
 - Verified near-duplicate/provenance review report.
 - Project-held-out manifest.
+- Reproduced Phoenix paired-benchmark reference metrics.
+- Colab notebook and evaluator for the matched Qwen2.5-Coder-14B natural-test baseline.
 
 ### `dataset_reference/`
 
@@ -41,6 +43,7 @@ The leakage-controlled PrimeVul manifest is included. The raw PrimeVul JSONL fil
 - Semgrep Community Edition: `1.163.0`.
 - Official retained test population: `24,008` records.
 - Primary locked-test result: precision `7.96%`, coverage `1.88%`, vulnerable-record recall `6.90%`.
+- Phoenix paired reference: vulnerable F1 `82.46%`, precision `79.18%`, recall `86.01%`, pair-correct `64.40%`; this is not directly comparable to the natural locked test.
 
 ## Verification order
 
