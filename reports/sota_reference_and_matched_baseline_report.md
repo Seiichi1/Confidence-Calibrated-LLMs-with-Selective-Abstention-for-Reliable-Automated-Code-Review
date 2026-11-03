@@ -91,12 +91,19 @@ uses the open-source model:
 Qwen/Qwen2.5-Coder-14B-Instruct
 ```
 
+The Hugging Face revision is pinned to:
+
+```text
+aedcc2d42b622764e023cf882b6652e646b95671
+```
+
 The comparator will use:
 
 - the same leakage-controlled 24,008-record test manifest;
 - the same code-only YES/NO prompt;
 - greedy decoding (`do_sample=False`);
 - maximum 16 generated tokens;
+- Hugging Face revision `aedcc2d42b622764e023cf882b6652e646b95671`;
 - no calibration fitting, threshold selection, or policy changes using test labels;
 - the same explicit treatment of unparseable responses as unresolved;
 - ordinary YES precision, recall, F1, and accuracy as a model baseline.
