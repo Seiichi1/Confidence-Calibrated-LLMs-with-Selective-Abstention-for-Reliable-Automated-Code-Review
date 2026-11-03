@@ -44,6 +44,7 @@ The leakage-controlled PrimeVul manifest is included. The raw PrimeVul JSONL fil
 - Official retained test population: `24,008` records.
 - Primary locked-test result: precision `7.96%`, coverage `1.88%`, vulnerable-record recall `6.90%`.
 - Phoenix paired reference: vulnerable F1 `82.46%`, precision `79.18%`, recall `86.01%`, pair-correct `64.40%`; this is not directly comparable to the natural locked test.
+- T4-compatible comparison: `Qwen/Qwen2.5-Coder-14B-Instruct` using NF4 4-bit bitsandbytes quantization and pinned revision `aedcc2d42b622764e023cf882b6652e646b95671`.
 
 ## Verification order
 
