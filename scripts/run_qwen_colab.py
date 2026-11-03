@@ -101,6 +101,7 @@ def load_model(
     dtype_name: str,
     local_files_only: bool,
     device_map_name: str,
+    quantization: str,
 ):
     try:
         import torch
@@ -126,10 +127,26 @@ def load_model(
     dtype = resolve_dtype(torch, dtype_name)
     model_kwargs = dict(load_kwargs)
     model_kwargs.update({"torch_dtype": dtype, "low_cpu_mem_usage": True})
+    if quantization == "4bit":
+        if not torch.cuda.is_available():
+            raise RuntimeError("4-bit bitsandbytes loading requires a CUDA GPU")
+        try:
+            from transformers import BitsAndBytesConfig
+        except ImportError as error:
+            raise RuntimeError(
+                "Install 4-bit support first: pip install -U bitsandbytes"
+            ) from error
+        model_kwargs["quantization_config"] = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_use_double_quant=True,
+        )
+        model_kwargs["torch_dtype"] = torch.float16
     if device_map_name == "auto":
         model_kwargs["device_map"] = "auto"
     model = AutoModelForCausalLM.from_pretrained(model_source, **model_kwargs)
-    if device_map_name == "cpu":
+    if device_map_name == "cpu" and quantization == "none":
         model.to("cpu")
     model.eval()
     return torch, tokenizer, model, dtype
@@ -237,6 +254,12 @@ def main() -> int:
         "--dtype", choices=("auto", "float32", "float16", "bfloat16"), default="auto"
     )
     parser.add_argument("--device-map", choices=("auto", "cpu"), default="auto")
+    parser.add_argument(
+        "--quantization",
+        choices=("none", "4bit"),
+        default="none",
+        help="Use NF4 4-bit bitsandbytes quantization for GPUs with limited VRAM",
+    )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument(
         "--progress-every",
@@ -259,6 +282,7 @@ def main() -> int:
         args.dtype,
         args.local_files_only,
         args.device_map,
+        args.quantization,
     )
 
     records = (
@@ -324,6 +348,7 @@ def main() -> int:
             "dtype_requested": args.dtype,
             "dtype_loaded": str(dtype),
             "device_map": args.device_map,
+            "quantization": args.quantization,
         },
         "run": run_info,
     }
