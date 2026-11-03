@@ -179,16 +179,19 @@ def run_one(
     model: Any,
     record: dict[str, Any],
     max_new_tokens: int,
+    max_input_tokens: int | None,
 ) -> dict[str, Any]:
     code = str(record.get("func", ""))
     messages = prompt_messages(code)
-    inputs = tokenizer.apply_chat_template(
-        messages,
-        add_generation_prompt=True,
-        tokenize=True,
-        return_tensors="pt",
-        return_dict=True,
-    )
+    template_kwargs: dict[str, Any] = {
+        "add_generation_prompt": True,
+        "tokenize": True,
+        "return_tensors": "pt",
+        "return_dict": True,
+    }
+    if max_input_tokens is not None:
+        template_kwargs.update({"truncation": True, "max_length": max_input_tokens})
+    inputs = tokenizer.apply_chat_template(messages, **template_kwargs)
     if hasattr(inputs, "to"):
         inputs = inputs.to(model_input_device(model, torch))
 
@@ -217,6 +220,11 @@ def run_one(
         "prediction": parse_prediction(response),
         "first_token_top5": top5,
         "prompt_sha256": prompt_hash(code),
+        "input_tokens": int(inputs["input_ids"].shape[-1]),
+        "input_truncated_at_limit": bool(
+            max_input_tokens is not None
+            and int(inputs["input_ids"].shape[-1]) >= max_input_tokens
+        ),
     }
 
 
@@ -251,6 +259,12 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=12345)
     parser.add_argument("--max-new-tokens", type=int, default=16)
     parser.add_argument(
+        "--max-input-tokens",
+        type=int,
+        default=None,
+        help="Optional prompt-length cap; useful for fitting quantized models on small GPUs",
+    )
+    parser.add_argument(
         "--dtype", choices=("auto", "float32", "float16", "bfloat16"), default="auto"
     )
     parser.add_argument("--device-map", choices=("auto", "cpu"), default="auto")
@@ -273,6 +287,8 @@ def main() -> int:
         parser.error("--limit must be non-negative; use 0 for all retained records")
     if args.progress_every < 1:
         parser.error("--progress-every must be positive")
+    if args.max_input_tokens is not None and args.max_input_tokens < 1:
+        parser.error("--max-input-tokens must be positive")
 
     retained = load_retained_numbers(args.manifest, args.partition)
     selected = select_record_numbers(args.data, retained, args.limit, args.seed)
@@ -309,7 +325,16 @@ def main() -> int:
                 flush=True,
             )
             result = build_result_record(
-                record_number, record, run_one(torch, tokenizer, model, record, args.max_new_tokens)
+                record_number,
+                record,
+                run_one(
+                    torch,
+                    tokenizer,
+                    model,
+                    record,
+                    args.max_new_tokens,
+                    args.max_input_tokens,
+                ),
             )
             if output_handle is not None:
                 output_handle.write(json.dumps(result, ensure_ascii=False) + "\n")
@@ -334,6 +359,7 @@ def main() -> int:
         "limit": args.limit,
         "seed": args.seed,
         "max_new_tokens": args.max_new_tokens,
+        "max_input_tokens": args.max_input_tokens,
         "prompt_contract": "code-only YES/NO classification",
         "manifest": str(args.manifest),
         "data": str(args.data),
