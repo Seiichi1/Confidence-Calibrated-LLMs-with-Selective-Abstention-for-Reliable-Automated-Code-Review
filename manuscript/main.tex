@@ -62,11 +62,11 @@ The study makes the following contributions:
 
 The main result is deliberately limited: the frozen hybrid improves precision among accepted alerts, but it does not improve every metric simultaneously and should not be described as a high-recall autonomous detector.
 
+The remainder of this paper is organized as follows. Section~\ref{sec:literature} reviews the research landscape and explains the themes used to position the study. Section~\ref{sec:rqs} states the research questions. Section~\ref{sec:methods} describes the dataset audit, model inference, calibration, selective gate, static corroboration, and evaluation protocol. Section~\ref{sec:results} presents the locked-test results, uncertainty analysis, and project-held-out operating-point study. Section~\ref{sec:discussion} interprets the findings and their practical value, while Section~\ref{sec:limitations} discusses threats to validity and limitations. Section~\ref{sec:conclusion} closes with the main conclusions and the scope of the contribution.
+
 \section{Literature Review}\label{sec:literature}
 
 Research on automated code review now spans several connected but not interchangeable questions. Some studies ask whether a model can recognize a vulnerability; others ask whether a static-analysis warning is actionable, whether a generated explanation is trustworthy, or whether a benchmark measures generalization rather than memorization. These questions become especially important when an LLM is placed in a developer workflow, where a confident but incorrect warning has a different cost from an uncertain case that is escalated. This review therefore brings together four strands of work---LLM-based code review and vulnerability detection, static analysis and hybrid verification, calibration and selective prediction, and benchmark/provenance practice---before explaining how the 77 Scopus records were searched and organized. The purpose is not to merge these strands into one score, but to identify the evidence needed to design and interpret a selective review pipeline.
-
-\subsection{Search strategy and thematic organization}
 
 The literature search was conducted in Scopus using title, abstract, and keyword fields. The export supplied for this study contains 77 records, exported on 28 October 2026. The records were organized into four themes: (i) LLMs for code review and vulnerability detection, (ii) static analysis and hybrid verification, (iii) reliability, explainability, and risk-aware deployment, and (iv) benchmark and evaluation practice. The directly relevant records are cited below; the complete export and BibTeX file are retained as research artifacts.
 
@@ -108,6 +108,8 @@ The empirical study addresses the following questions:
 \end{enumerate}
 
 \section{Methods}\label{sec:methods}
+
+The methods are presented in the order in which evidence becomes available to the pipeline. We first define the dataset and its ground truth, then audit cross-partition similarity before any model evaluation. We next describe deterministic LLM inference, validation-only calibration, selective acceptance, rule corroboration, and the metrics used to report both performance and uncertainty.
 
 \subsection{Dataset and ground truth}
 
@@ -198,6 +200,8 @@ Accepted-positive precision is the proportion of accepted positive alerts that a
 Point estimates were supplemented with 5,000 record-level paired bootstrap resamples and 5,000 project-clustered resamples. Project clustering samples whole projects rather than individual functions because functions from the same project may be statistically related.
 
 \section{Results}\label{sec:results}
+
+The results follow the same decision path as the methods. We begin with the raw Qwen baseline and the frozen locked-test comparison, then quantify statistical uncertainty, examine the project-held-out operating point, and finally report the independent Semgrep corroboration results. This ordering separates the official benchmark conclusion from the auxiliary generalization analysis.
 
 \subsection{Raw baseline and locked-test comparison}
 
@@ -401,6 +405,8 @@ The alpha 0.50 candidate minus alpha 0.10 difference was +5.12 percentage points
 On the project-held-out candidate, Semgrep found a static pattern in 3,654 of 38,362 records. Static positive precision was 8.95\% and static positive recall was 30.33\%. Qwen and Semgrep were classified as AGREE on 3,509 records, DISAGREE on 1 record, and NEUTRAL on 34,852 records. The large neutral group is expected because absence of a rule finding was not converted into a negative security claim.
 
 \section{Discussion}\label{sec:discussion}
+
+The discussion interprets the results as an operational trade-off rather than as a single leaderboard score. It first identifies what improved and what deteriorated, then considers the contribution of each component, the project-held-out evidence, and the circumstances in which the pipeline can support human review.
 
 \subsection{What improved and what did not}
 
