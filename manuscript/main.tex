@@ -29,7 +29,7 @@
 \author*[1]{\fnm{Rehan}}
 \affil*[1]{\orgname{Lovely Professional University}, \country{India}}
 
-\abstract{Large language models (LLMs) can assist vulnerability review, but a model that flags nearly every function creates a large false-positive burden. This paper evaluates a selective code-review pipeline that calibrates an open-source code LLM, abstains on uncertain decisions, and uses Semgrep as independent rule-based corroboration. We audit the raw PrimeVul v0.1 train, validation, and test partitions before evaluation, using memory-bounded approximate similarity retrieval followed by token-overlap verification and provenance review. The final leakage-controlled validation and test populations contain 23,033 and 24,008 records, respectively. Qwen2.5-Coder-1.5B-Instruct is evaluated with a code-only prompt. On the locked test partition, raw Qwen produces positive alerts for 99.08\% of records, with 2.01\% precision among alerts and 91.76\% vulnerable-record recall. The frozen calibrated and Semgrep-corroborated policy accepts 1.88\% of records, increasing accepted-alert precision to 7.96\% while reducing vulnerable-record recall to 6.90\%. The precision improvement over raw Qwen is +5.95 percentage points under both record-level and project-clustered sensitivity analyses. A separate 400-project candidate evaluation shows the operating-point trade-off: increasing the conformal level from 0.10 to 0.50 raises coverage from 2.89\% to 8.01\% and recall from 11.32\% to 25.23\%, but decreases precision from 11.01\% to 8.86\%. The results support selective review triage rather than fully autonomous vulnerability detection.}
+\abstract{Large language models promise to make security review available at the speed of software development, yet an alert stream that is wrong most of the time can exhaust the very developer attention it is meant to save. This study treats that tension as a reliability problem rather than as a contest to maximize a single detection score. It develops a layered code-review pipeline in which post-hoc calibration first makes the model's confidence more interpretable, selective prediction then allows uncertain cases to be deferred, and Semgrep supplies an explicit rule-based signal before an alert enters the high-priority queue. Before measuring performance, the study audits the raw PrimeVul v0.1 train, validation, and test partitions with memory-bounded approximate retrieval, token-overlap verification, and provenance review. On the resulting leakage-controlled locked test, the open-source Qwen2.5-Coder-1.5B-Instruct baseline flags 99.08\% of records and achieves 2.01\% precision among its alerts, whereas the frozen calibrated-and-corroborated policy accepts 1.88\% of records and raises accepted-alert precision to 7.96\%. This gain is accompanied by a fall in vulnerable-record recall from 91.76\% to 6.90\%, making the operating trade-off explicit rather than hiding it behind an aggregate score. Record-level and project-clustered sensitivity analyses both estimate a +5.95 percentage-point precision improvement over raw Qwen. The resulting framework should therefore be understood as a selective triage tool that protects developer attention by forwarding a small, evidence-supported queue for review, not as a fully autonomous vulnerability detector.}
 
 \keywords{large language models, vulnerability detection, automated code review, confidence calibration, selective prediction, conformal prediction, static analysis, Semgrep, PrimeVul}
 
@@ -38,11 +38,19 @@
 
 \section{Introduction}\label{sec:introduction}
 
-Large language models have become useful assistants for programming, code understanding, testing, and software maintenance. Recent literature includes surveys of automated code review and software-quality evaluation, empirical studies of LLM vulnerability detection, and hybrid systems that combine LLM reasoning with static analysis \cite{Borgalli2026,TaghaviFar2025,Tamberg202529698,Gnieciak2025198410}. However, capability is not the same as dependable deployment. In a security-review workflow, an incorrect positive alert consumes developer attention, while an incorrect negative decision can leave a vulnerability unreported.
+Imagine a developer preparing a release late in the day. A security scanner, an automated reviewer, and a language model have all inspected the same code, yet the developer still has to decide which warnings deserve attention first. If the tools produce a long queue of weak alerts, the review process becomes a second source of risk: time is spent dismissing harmless findings, while a genuinely dangerous path may be overlooked in the noise. If the tools remain silent whenever the evidence is difficult to interpret, the queue may become shorter but important vulnerabilities can disappear from view. The practical challenge is therefore not simply to make an automated reviewer more confident. It is to make its confidence useful to a person who must decide what to inspect next.
 
-This problem is especially visible when an LLM is used as a binary code classifier. A model may appear to have high recall because it flags almost every record, while the resulting alert stream is too noisy for practical use. The system therefore needs a way to distinguish predictions that can be accepted automatically from cases that should be escalated to a human reviewer.
+Large language models (LLMs) are promising in this setting because they can read code in context, explain a suspected weakness, and recognize patterns that do not fit a short list of hand-written rules. Recent research covers automated code review, software-quality assessment, vulnerability detection, and hybrid systems that combine language-model reasoning with static analysis \cite{Borgalli2026,TaghaviFar2025,Tamberg202529698,Gnieciak2025198410}. Yet capability is not the same as dependable deployment. A model may produce a plausible explanation while being uncertain about the underlying decision, or it may use a broad notion of suspicious code that generates many alerts with little practical value.
 
-This paper implements and evaluates a pipeline with three controls. First, post-hoc calibration adjusts the interpretation of model confidence using validation data. Second, selective prediction allows the system to abstain when the available evidence is insufficient. Third, rule corroboration uses Semgrep to provide an independent code-pattern signal. The purpose is not to remove human review, but to create a more useful high-confidence triage mode.
+This tension is particularly visible when an LLM is asked to make a binary decision: flag the code or do not flag it. A high number of positive predictions can make recall look attractive, but it can also overwhelm the reviewer with false positives. Conversely, a strict threshold can produce a tidy queue by rejecting so many cases that the system misses most of the vulnerable examples. A useful review assistant must expose this trade-off and provide an explicit route for uncertain cases rather than forcing every example into an apparently certain YES or NO answer.
+
+The present study addresses that need with a layered pipeline. The first layer is post-hoc calibration, which adjusts how the model's raw score is interpreted after the model has produced its prediction. The second is selective prediction: the system may accept a high-confidence case or abstain and send it for further review. The third is rule corroboration, in which Semgrep supplies a separately inspectable code-pattern signal. These layers are deliberately conservative. They are intended to reduce the number of alerts that reach the automatic high-priority queue, while making the cost of that caution visible through coverage and vulnerable-record recall.
+
+The empirical setting is PrimeVul v0.1, a function-level vulnerability benchmark with project and provenance metadata. Before any model result is interpreted, the supplied train, validation, and test partitions are audited for approximate cross-partition similarity and provenance relationships. This step is important because an evaluation can appear strong when development and test contain highly related code. The raw partitions are kept unchanged; a derived manifest records which records are retained for calibration and locked evaluation. The model is then evaluated with a code-only prompt so that labels, project names, commit messages, and other metadata cannot become accidental shortcuts.
+
+The quantitative results are introduced only after this protocol is fixed. On the leakage-controlled test population, raw Qwen produces positive alerts for almost the entire partition and has low precision among those alerts. The calibrated and Semgrep-corroborated policy accepts a much smaller queue and improves its accepted-alert precision, but it also accepts fewer vulnerable records. This is not presented as an across-the-board improvement. It is an operating-point result: the system is useful when the objective is to prioritize a small set of stronger alerts, and unsuitable when the objective is to provide high-recall autonomous screening.
+
+The literature used to frame the study was selected to mirror this reasoning. We included review and survey papers that describe the broader use of LLMs in software engineering; empirical studies that evaluate LLMs or learned representations for vulnerability detection; work on static analysis, warning validation, and LLM--SAST combinations; and methods papers on calibration, selective prediction, and conformal inference. These groups were chosen because each addresses a different part of the deployment problem: what the model can understand, what explicit rules can verify, how uncertainty can be measured, and how an evaluation can avoid overstating generalization. We did not treat a paper as directly comparable merely because it used an LLM for code generation or classification. Papers were retained for the core discussion when they informed automated review, security analysis, reliability, verification, or benchmark design; more general software-engineering papers were used only when they clarified the surrounding context. The Scopus search and screening process is described in Section~\ref{sec:literature}, and the complete export is preserved with the research artifacts.
 
 The study makes the following contributions:
 \begin{enumerate}[leftmargin=*]
@@ -55,6 +63,8 @@ The study makes the following contributions:
 The main result is deliberately limited: the frozen hybrid improves precision among accepted alerts, but it does not improve every metric simultaneously and should not be described as a high-recall autonomous detector.
 
 \section{Literature Review}\label{sec:literature}
+
+Research on automated code review now spans several connected but not interchangeable questions. Some studies ask whether a model can recognize a vulnerability; others ask whether a static-analysis warning is actionable, whether a generated explanation is trustworthy, or whether a benchmark measures generalization rather than memorization. These questions become especially important when an LLM is placed in a developer workflow, where a confident but incorrect warning has a different cost from an uncertain case that is escalated. This review therefore brings together four strands of work---LLM-based code review and vulnerability detection, static analysis and hybrid verification, calibration and selective prediction, and benchmark/provenance practice---before explaining how the 77 Scopus records were searched and organized. The purpose is not to merge these strands into one score, but to identify the evidence needed to design and interpret a selective review pipeline.
 
 \subsection{Search strategy and thematic organization}
 
@@ -139,18 +149,24 @@ High-priority provenance pairs & \multicolumn{3}{c}{1,795} & 1,795\\
 
 \begin{figure}[htbp]
 \centering
-\begin{tikzpicture}[node distance=4mm and 5mm, scale=.76, transform shape]
-  \node[paperbox] (raw) {Raw PrimeVul\\224,533 records};
-  \node[paperbox, right=of raw] (sim) {SimHash retrieval\\7,626,863 candidates};
-  \node[paperbox, right=of sim] (jac) {5-gram Jaccard\\2,872 verified candidates};
-  \node[paperbox, right=of jac] (prov) {Provenance review\\1,795 high-priority pairs};
+\begin{tikzpicture}[node distance=4.5mm, scale=.88, transform shape]
+  % A vertical layout keeps the complete numbers legible in a two-column paper.
+  \node[paperbox, minimum width=7.0cm, text width=7.0cm, minimum height=.72cm] (raw)
+    {Raw PrimeVul\\\textbf{224,533 records}};
+  \node[paperbox, minimum width=7.0cm, text width=7.0cm, minimum height=.72cm, below=of raw] (sim)
+    {Token-based 64-bit SimHash retrieval\\\textbf{7,626,863 approximate candidates}};
+  \node[paperbox, minimum width=7.0cm, text width=7.0cm, minimum height=.72cm, below=of sim] (jac)
+    {Token 5-gram Jaccard verification\\\textbf{2,872 verified candidates}};
+  \node[paperbox, minimum width=7.0cm, text width=7.0cm, minimum height=.72cm, below=of jac] (prov)
+    {Provenance review\\\textbf{1,795 high-priority pairs}};
+  \node[papersmall, minimum width=7.0cm, text width=7.0cm, minimum height=.86cm, below=of prov] (roles)
+    {Leakage-controlled roles\\\textbf{Validation: 23,033 retained records\quad Test: 24,008 retained records}};
   \draw[paperarrow] (raw) -- (sim);
   \draw[paperarrow] (sim) -- (jac);
   \draw[paperarrow] (jac) -- (prov);
-  \node[papersmall, below=of jac] (roles) {Leakage-controlled roles\\validation: 23,033\\test: 24,008};
   \draw[paperarrow] (prov) -- (roles);
 \end{tikzpicture}
-\caption{Leakage-control workflow used before model evaluation. Approximate lexical candidates were triaged and then reviewed for provenance; they were not automatically treated as confirmed semantic duplicates.}
+\caption{Leakage-control workflow used before model evaluation. The audit moves from broad approximate retrieval to lexical verification and then to provenance review. The final role assignment records which validation and test records are retained; an approximate or verified pair is not automatically treated as a confirmed semantic duplicate.}
 \label{fig:leakage-flow}
 \end{figure}
 
